@@ -9,3 +9,4 @@
 * editor: [vim](https://www.vim.org/)
 * icon-fonts: [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
 * terminal|system font: Fira Code | Fira Mono
+* firefox: [blurredfirefox](https://github.com/manilarome/blurredfox)
