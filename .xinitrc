@@ -2,13 +2,16 @@
 
 # Set resolution
 sleep 2
-/home/ka9/.screenlayout/myLayout.sh
+$HOME/.screenlayout/myLayout.sh
 
 # Set keybindings
 xbindkeys
 
 # Set wallpaper
-hsetroot -cover ~/Pictures/deku-wallpaper.jpg
+hsetroot -cover $HOME/Pictures/tv-wallpaper.jpg
+
+# Picom
+# picom &
 
 # spawn window manager
 exec i3

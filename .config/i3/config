@@ -26,7 +26,7 @@ client.background       #ffffff
 
 # i3-gaps
 gaps inner 10
-gaps top 30
+gaps top 27
 smart_borders on
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so

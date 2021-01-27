@@ -1,0 +1,3 @@
+# backup files
+.config/polybar/config-backup
+.config/polybar/launch-backup.sh

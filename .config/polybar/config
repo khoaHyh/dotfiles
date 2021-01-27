@@ -1,7 +1,5 @@
-# Adapted from 'https://github.com/k-vernooy/dotfiles'
-
 [colors]
-background = #0c120d
+background = #fa1e213
 foreground = #a4d2aa
 primary = #02c084
 secondary = #65a2d9
@@ -11,9 +9,9 @@ alert = #ed404c
 
 
 [bar/main]
-width = 100%:-10
-offset-x = 5
-offset-y = 5
+width = 100%
+# offset-x = 5
+# offset-y = 5
 
 height = 27
 radius = 6.0
@@ -34,7 +32,7 @@ font-1 = Hack Nerd Font:style=Regular:pixelsize=17:antialias=false;3
 
 modules-left = i3
 modules-center = xwindow
-modules-right = alsa wlan battery date dmenu
+modules-right = alsa wlan battery date powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -164,8 +162,8 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <ramp-capacity>
-format-discharging = <ramp-capacity>
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
 
 label-full =  
 label-full-foreground = ${colors.fourth}
@@ -182,17 +180,17 @@ ramp-capacity-8 = 
 ramp-capacity-9 = 
 ramp-capacity-foreground = ${colors.fourth}
 
-label-discharging =
-label-discharging-foreground = ${colors.fourth}
 label-charging-foreground = ${colors.fourth}
 
-[module/dmenu]
+label-discharging = %percentage%%
+label-discharging-foreground = ${colors.fourth}
+
+[module/powermenu]
 type = custom/text
 format-spacing = 1
 content = 
 content-foreground = ${colors.alert}
-click-left = dmenu
-
+click-left = powermenu
 
 [settings]
 screenchange-reload = true
