@@ -1,0 +1,12 @@
+colorscheme gruvbox
+filetype plugin indent on
+syntax on
+set background=dark
+set backspace=indent,eol,start
+set hidden
+set wildmenu
+set autoindent
+set incsearch
+set ruler
+set termguicolors
+set number
