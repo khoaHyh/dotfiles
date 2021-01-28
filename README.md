@@ -1,4 +1,4 @@
-![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/arch-rice-1.jpg)
+![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/arch-rice-2.jpg)
 
 ### Built With
 
@@ -12,3 +12,4 @@
 * icon-fonts: [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
 * terminal & system font: Fira Mono
 * firefox: [blurredfirefox](https://github.com/manilarome/blurredfox)
+* wallpaper: [Penguin-Linux](https://www.reddit.com/r/wallpaper/comments/kcffkg/1920x1080_penguin_linux_wallpaper_dark_light_svg/)
