@@ -8,7 +8,7 @@ $HOME/.screenlayout/myLayout.sh
 xbindkeys
 
 # Set wallpaper
-hsetroot -cover $HOME/Pictures/tv-wallpaper.jpg
+hsetroot -cover $HOME/Pictures/scalable-dark-linux.png
 
 # Picom
 # picom &
