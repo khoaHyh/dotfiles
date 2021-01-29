@@ -10,3 +10,4 @@ set incsearch
 set ruler
 set termguicolors
 set number
+set tabstop=4
