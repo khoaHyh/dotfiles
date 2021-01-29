@@ -1,11 +1,11 @@
 [colors]
 background = #fa1e213
-foreground = #a4d2aa
+foreground = #ebdbb2
 primary = #02c084
-secondary = #65a2d9
+secondary = #458588
 tertiary = #d07ef2
-fourth = #e5c246
-alert = #ed404c
+fourth = #fabd2f
+alert = #fb4934
 
 
 [bar/main]
