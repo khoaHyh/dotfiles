@@ -18,5 +18,5 @@
 * terminal & system font: Fira Sans & Fira Mono
 * firefox: [SimplerentFox](https://github.com/MiguelRAvila/SimplerentFox)
 * spotify-theme: [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish)
-* wallpaper: [Penguin-Linux](https://www.reddit.com/r/wallpaper/comments/kcffkg/1920x1080_penguin_linux_wallpaper_dark_light_svg/)
+* wallpaper: [Groot I Am Root](https://hdqwalls.com/groot-i-am-root-wallpaper)
 
