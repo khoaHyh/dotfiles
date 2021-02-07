@@ -8,5 +8,7 @@
 .config/rofi/powermenu/*
 !.config/rofi/powermenu/powermenu.sh
 !.config/rofi/powermenu/card_square.rasi
+!.config/rofi/powermenu/styles/
+.config/rofi/powermenu/styles/*
 !.config/rofi/powermenu/styles/cocoa.rasi
 
