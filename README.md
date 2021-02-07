@@ -1,4 +1,5 @@
-![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/arch-rice-2.jpg)
+![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/arch-rice-3a.jpg)
+![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/arch-rice-3b.jpg)
 
 ### Built With
 
