@@ -3,9 +3,8 @@
 .config/polybar/launch-backup.sh
 
 # rofi files not in use
-.config/rofi/applets
-.config/rofi/bin
-.config/rofi/launchers
+.config/rofi/*
+!.config/rofi/powermenu/
 .config/rofi/powermenu/*
 !.config/rofi/powermenu/powermenu.sh
 !.config/rofi/powermenu/card_square.rasi
