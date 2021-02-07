@@ -1,1 +1,6 @@
-hsetroot -cover ~/Wallpapers/mobpsycho-wp2.jpg &
+# Set wallpaper
+# hsetroot -cover ~/Wallpapers/mobpsycho-wp2.jpg &
+hsetroot -cover ~/Wallpapers/groot-i-am-root-qhd-1366x768.jpg
+
+# Personal keybinds
+xbindkeys

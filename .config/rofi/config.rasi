@@ -1,0 +1,27 @@
+configuration {
+
+	show-icons: true;	
+    modi: "window,drun,ssh,run";
+    click-to-exit: true;
+    kb-remove-word-back: "Alt+d";
+    kb-accept-entry: "Return";
+    kb-mode-next: "Alt+s";
+    kb-row-up: "Up";
+    kb-row-down: "Down";
+    kb-cancel:"Escape";
+	kb-select-1: "1";
+    kb-select-2: "2";
+	kb-select-3: "3";
+    kb-select-4: "4";
+    kb-select-5: "5";
+    kb-select-6: "6";
+    kb-select-7: "7";
+    kb-select-8: "8";
+    kb-select-9: "9";
+    kb-select-10: "0";
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+ 
+}
+@import "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+
