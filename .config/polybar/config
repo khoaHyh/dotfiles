@@ -13,11 +13,12 @@ width = 100%
 # offset-x = 5
 # offset-y = 5
 
-height = 24
+height = 26
 radius = 0.0
 
 override-redirect = true
-;wm-restack = i3
+## wm-restack allows the wm specified to overlap
+wm-restack = i3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -27,12 +28,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Fira Mono:pixelsize=10;2.5
+font-0 = Fira Mono:style=Medium:pixelsize=12;2.5
 font-1 = Hack Nerd Font:style=Regular:pixelsize=12;3
 
 modules-left = i3
 modules-center = xwindow
-modules-right = mic-volume audio vpn wlan battery date powermenu
+modules-right = system-bluetooth-bluetoothctl mic-volume audio vpn wlan battery date powermenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -64,7 +65,7 @@ reverse-scroll = false
 fuzzy-match = true
 
 ws-icon-default = " "
-ws-icon-0 = "0;0 "
+ws-icon-0 = "0;0 "
 ws-icon-1 = "1;1 "
 ws-icon-2 = "2;2 "
 ws-icon-3 = "3;3 "
@@ -72,8 +73,8 @@ ws-icon-4 = "4;4 "
 ws-icon-5 = "5;5 "
 ws-icon-6 = "6;6 "
 ws-icon-7 = "7;7 "
-ws-icon-8 = "8; "
-ws-icon-9 = "9; "
+ws-icon-8 = "8;8ﭮ "
+ws-icon-9 = "9;9 "
 
 format = <label-state>
 
@@ -141,6 +142,14 @@ time-alt = "%H:%M:%S"
 format-prefix-foreground = ${colors.foreground}
 format-underline = #0a6cf5
 label = %date%%time%
+
+# https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-bluetooth-bluetoothctl
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+format = <label>
+exec = ~/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = ~/.config/polybar/scripts/system-bluetooth-bluetoothctl.sh --toggle &
 
 
 # https://github.com/MarcDonald/polybar-mic-volume
