@@ -20,4 +20,5 @@
 * firefox: [SimplerentFox](https://github.com/MiguelRAvila/SimplerentFox)
 * spotify-theme: [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish)
 * wallpaper: [Groot I Am Root](https://hdqwalls.com/groot-i-am-root-wallpaper)
-
+* notifications: [dunst](https://github.com/dunst-project/dunst)
+* music player: [cmus](https://github.com/cmus/cmus)
