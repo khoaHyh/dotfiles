@@ -5,6 +5,7 @@
 ### Built With
 
 * wm: [qtile](http://www.qtile.org/)
+	* adapted from [distrotube](https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/qtile/config.py)
 * status-bar: built-in qtile panel
 * terminal: [termite](https://github.com/thestinger/termite)
 	* [termite-themes](https://github.com/khamer/base16-termite)
