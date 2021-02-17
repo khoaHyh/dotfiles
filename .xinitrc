@@ -1,17 +1,14 @@
-#!/bin/sh
+#!/bin/bash
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
 
-# Set resolution
-sleep 2
-$HOME/.screenlayout/myLayout.sh
+DEFAULT_SESSION='qtile --shmlog-size 0'
 
-# Set keybindings
-xbindkeys
+xrdb -merge ~/.Xresources &
 
-# Set wallpaper
-hsetroot -cover $HOME/Pictures/scalable-dark-linux.png
+# Set background image
+hsetroot -cover ~/Wallpapers/mobpsycho-wp2.jpg &
 
-# Picom
-# picom &
-
-# spawn window manager
-exec i3
+exec qtile

@@ -21,3 +21,6 @@ alias ls='ls --color=auto'
 
 # starship bash config
 eval "$(starship init bash)"
+
+### RANDOM COLOR SCRIPT ###
+colorscript random
