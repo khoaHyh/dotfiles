@@ -30,7 +30,7 @@ import re
 import socket
 import subprocess
 from typing import List  # noqa: F401
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -337,11 +337,19 @@ screens = [
                         padding = -3,
                         fontsize = 37
                         ),
+                widget.BatteryIcon(
+                        battery = "BAT1",
+                        theme_path = '/home/ka9/.config/qtile/battery-icons',
+                        padding = 0,
+                        update_interval = 5,
+                        background = colors[5]
+                        ),
                 widget.Battery(
                         battery = "BAT1",
                         charge_char = '',
                         discharge_char = "",
-                        format ='{char} {percent:2.0%} {hour:d}h:{min:02d}m',
+                        #format ='{char} {percent:2.0%} {hour:d}h:{min:02d}m',
+                        format ='{percent:2.0%} {hour:d}h:{min:02d}m',
                         foreground = colors[0],
                         padding = 5,
                         background = colors[5]
@@ -358,7 +366,7 @@ screens = [
                         foreground = colors[0],
                         background = colors[6],
                         # format = "%Y-%m-%d %a %I:%M %p"
-                        format = "%A, %B %d - %H:%M"
+                        format = " %A, %B %d - %H:%M"
                         ),
                 widget.Sep(
                         linewidth = 0,
@@ -406,6 +414,11 @@ floating_layout = layout.Floating(float_rules=[
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
+
+@hook.subscribe.startup_once
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([home])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
