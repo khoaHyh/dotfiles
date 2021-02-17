@@ -1,6 +1,4 @@
-![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/manjaro-rice-5a.png)
-![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/manjaro-rice-5b.png)
-![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/manjaro-rice-5c.png)
+![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/manjaro-rice-5.png)
 
 ### Built With
 
