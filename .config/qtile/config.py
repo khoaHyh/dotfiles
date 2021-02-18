@@ -265,7 +265,8 @@ screens = [
                         ),
                 widget.Systray(
                         background = colors[0],
-                        padding = 5
+                        padding = 5,
+                        icon_size = 18
                         ),
                 widget.TextBox(
                         text = "",
@@ -318,11 +319,11 @@ screens = [
                         padding = -3,
                         fontsize = 37
                         ),
-                widget.TextBox(
-                        text = "墳",
+                widget.Volume(
+                        theme_path = '/home/ka9/.config/qtile/volume-icons',
                         foreground = colors[0],
                         background = colors[1],
-                        padding = 2
+                        padding = 0
                         ),
                 widget.Volume(
                         foreground = colors[0],
