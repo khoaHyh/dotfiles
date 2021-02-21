@@ -47,18 +47,18 @@
 
 [urgency_low]
 timeout = 4
-background = "#2a2f33"
+background = "#191414"
 foreground = "#b3cfa7"
-frame_color = "#474f54"
+frame_color = "#504945"
 
 [urgency_normal]
 timeout = 5
 background = "#191414"
-foreground = "#fefefe"
-frame_color = "#fabd2f"
+foreground = "#fabd2d"
+frame_color = "#504945"
 
 [urgency_critical]
 timeout = 0
-background = "#2a2f33"
-foreground = "#b3cfa7"
-frame_color = "#fb4934"
+background = "#191414"
+foreground = "#fb4934"
+frame_color = "#504945"
