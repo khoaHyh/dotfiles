@@ -31,7 +31,7 @@ import socket
 import subprocess
 from typing import List  # noqa: F401
 from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Screen
+from libqtile.config import Click, Drag, Group, Key, Screen, KeyChord
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -40,6 +40,31 @@ mod = "mod4"
 terminal = "termite"
 
 keys = [
+    #KeyChord([mod], "z", [
+    #    Key([], "Left", lazy.layout.grow_left()),
+    #    Key([], "Up", lazy.layout.grow_up()),
+    #    Key([], "Down", lazy.layout.grow_down()),
+    #    Key([], "Right", lazy.layout.grow_right())],
+    #    mode="Windows"
+    #    ),
+    Key([mod], "l",
+        lazy.layout.grow(),
+        lazy.layout.increase_nmaster(),
+        desc='Expand window (MonadTall), increase number in master pane (Tile)'
+        ),
+    Key([mod], "h",
+        lazy.layout.shrink(),
+        lazy.layout.decrease_nmaster(),
+        desc='Shrink window (MonadTall), decrease number in master pane (Tile)'
+        ),
+    Key([mod], "n",
+        lazy.layout.normalize(),
+        desc='normalize window size ratios'
+        ),
+    Key([mod], "m",
+        lazy.layout.maximize(),
+        desc='toggle window between minimum and maximum sizes'
+        ),
     Key([mod, "shift"], "Return",
         lazy.spawn("rofi -show drun"),
         desc='Run Launcher'
@@ -213,7 +238,7 @@ colors = [["#282828", "#282828"], # dark bg
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 widget_defaults = dict(
-    font='Hack Nerd Font',
+    font='Hack Nerd Font Bold',
     fontsize=12,
     padding=2,
     background=colors[2]
@@ -247,7 +272,7 @@ screens = [
                         ),
                 widget.Prompt(
                         prompt = prompt,
-                        font = "Hack Nerd Font",
+                        font = "Hack Nerd Font Bold",
                         padding = 10,
                         foreground = colors[3],
                         background = colors[0]
@@ -270,7 +295,7 @@ screens = [
                         ),
                 widget.TextBox(
                         text = "",
-                        font = "UbuntuMono Nerd Font",
+                        font = "UbuntuMono Nerd Font Bold",
                         foreground = colors[4],
                         background = colors[0],
                         padding = -3,
@@ -283,7 +308,7 @@ screens = [
                         ),
                 widget.TextBox(
                         text = "",
-                        font = "UbuntuMono Nerd Font",
+                        font = "UbuntuMono Nerd Font Bold",
                         foreground = colors[3],
                         background = colors[4],
                         padding = -3,
@@ -298,7 +323,7 @@ screens = [
                         ),
                 widget.TextBox(
                         text = "",
-                        font = "UbuntuMono Nerd Font",
+                        font = "UbuntuMono Nerd Font Bold",
                         foreground = colors[7],
                         background = colors[3],
                         padding = -3,
@@ -306,14 +331,14 @@ screens = [
                         ),
                 widget.Wlan(
                         interface = "wlp3s0",
-                        format = '直 {essid} {percent:2.0%}',
+                        format = '直 {essid}',
                         foreground = colors[0],
                         background = colors[7],
                         padding = 5
                         ),
                 widget.TextBox(
                         text = "",
-                        font = "UbuntuMono Nerd Font",
+                        font = "UbuntuMono Nerd Font Bold",
                         foreground = colors[1],
                         background = colors[7],
                         padding = -3,
@@ -332,11 +357,28 @@ screens = [
                         ),
                 widget.TextBox(
                         text = "",
-                        font = "UbuntuMono Nerd Font",
+                        font = "UbuntuMono Nerd Font Bold",
                         foreground = colors[5],
                         background = colors[1],
                         padding = -3,
                         fontsize = 37
+                        ),
+                widget.BatteryIcon(
+                        battery = "BAT0",
+                        theme_path = '/home/ka9/.config/qtile/battery-icons',
+                        padding = 0,
+                        update_interval = 5,
+                        background = colors[5]
+                        ),
+                widget.Battery(
+                        battery = "BAT0",
+                        charge_char = '',
+                        discharge_char = "",
+                        #format ='{char} {percent:2.0%} {hour:d}h:{min:02d}m',
+                        format ='{percent:2.0%} BAT0 ',
+                        foreground = colors[0],
+                        padding = 5,
+                        background = colors[5]
                         ),
                 widget.BatteryIcon(
                         battery = "BAT1",
@@ -350,14 +392,14 @@ screens = [
                         charge_char = '',
                         discharge_char = "",
                         #format ='{char} {percent:2.0%} {hour:d}h:{min:02d}m',
-                        format ='{percent:2.0%} {hour:d}h:{min:02d}m',
+                        format ='{percent:2.0%} BAT1 ',
                         foreground = colors[0],
                         padding = 5,
                         background = colors[5]
                         ),
                 widget.TextBox(
                         text = "",
-                        font = "UbuntuMono Nerd Font",
+                        font = "UbuntuMono Nerd Font Bold",
                         foreground = colors[6],
                         background = colors[5],
                         padding = -3,
