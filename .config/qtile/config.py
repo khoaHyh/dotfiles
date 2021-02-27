@@ -40,13 +40,10 @@ mod = "mod4"
 terminal = "termite"
 
 keys = [
-    #KeyChord([mod], "z", [
-    #    Key([], "Left", lazy.layout.grow_left()),
-    #    Key([], "Up", lazy.layout.grow_up()),
-    #    Key([], "Down", lazy.layout.grow_down()),
-    #    Key([], "Right", lazy.layout.grow_right())],
-    #    mode="Windows"
-    #    ),
+    Key([mod, "shift"], "p",
+        lazy.spawn("/home/ka9/.config/rofi/powermenu/powermenu.sh"),
+        desc='launch rofi power menu'
+        ),
     Key([mod], "l",
         lazy.layout.grow(),
         lazy.layout.increase_nmaster(),
