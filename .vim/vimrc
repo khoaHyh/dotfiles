@@ -1,22 +1,28 @@
+let g:ale_disable_lsp = 1
+let g:gruvbox_contrast_dark = 'hard'
+
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf.vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
-let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 set backspace=indent,eol,start
 set wildmenu
 set autoindent
+set smartindent
 set incsearch
 set ruler
 set termguicolors
 set number
 set tabstop=4
+set expandtab
+set shiftwidth=4
 
 " TextEdit might fail if hidden is not set.
 set hidden
