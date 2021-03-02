@@ -1,6 +1,1 @@
-# Set wallpaper
-# hsetroot -cover ~/Wallpapers/mobpsycho-wp2.jpg &
-hsetroot -cover ~/Wallpapers/mobpsycho-wp.png &
-
-# Personal keybinds
-xbindkeys
+/home/ka9/.xprofile
