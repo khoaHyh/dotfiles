@@ -1,1 +1,8 @@
-/home/ka9/.xprofile
+# Set wallpaper
+# hsetroot -cover ~/Wallpapers/mobpsycho-wp.png &
+
+# Set/restore dwall wallpaper after login/reboot
+dwall -s tokyo &
+
+# Personal keybinds
+xbindkeys

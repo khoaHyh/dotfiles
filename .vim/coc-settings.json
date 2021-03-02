@@ -1,1 +1,3 @@
-/home/ka9/.vim/coc-settings.json
+{
+	"diagnostic.displayByAle": true
+}
