@@ -226,23 +226,23 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-colors = [["#282828", "#282828"], # dark bg
-          ["#b8bb26", "#b8bb26"], # gruvbox green
-          ["#ebdbb2", "#ebdbb2"], # fg
-          ["#83a598", "#83a598"], # gruvbox blue
-          ["#d3869b", "#d3869b"], # gruvbox purple
-          ["#fabd2f", "#fabd2f"], # gruvbox yellow
-          ["#fe8019", "#fe8019"], # gruvbox orange
-          ["#8ec07c", "#8ec07c"]] # gruvbox aqua
+colors = [["#1d2021", "#1d2021"], # bg0_h
+          ["#282828", "#282828"], # bg0
+          ["#3c3836", "#3c3836"], # bg1
+          ["#fabd2f", "#fabd2f"], # yellow
+          ["#8ec07c", "#8ec07c"], # aqua
+          ["#b8bb26", "#b8bb26"], # green
+          ["#fb4934", "#fb4934"], # red
+          ["#ebdbb2", "#ebdbb2"]] # fg
 
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 widget_defaults = dict(
-    font='Hack Nerd Font Bold',
+    font='Iosevka Nerd Font Complete',
     fontsize=12,
-    padding=2,
-    background=colors[2]
+    padding=5,
+    background=colors[0]
 )
 extension_defaults = widget_defaults.copy()
 
@@ -253,39 +253,41 @@ screens = [
                 widget.Sep(
                         lineWidth = 0,
                         padding = 6,
-                        foreground = colors[2],
+                        foreground = colors[0],
                         background = colors[0]
                         ),
                 widget.GroupBox(
-                        font = "Hack Nerd Font Bold",
+                        font = "Iosevka Bold Nerd Font Complete",
                         fontsize = 10,
-                        margin_y = 3,
+                        margin_y = 5,
                         margin_x = 0,
-                        padding_y = 5,
-                        padding_x = 3,
+                        padding_y = 3,
+                        padding_x = 5,
                         borderwidth = 3,
-                        active = colors[2],
-                        inactive = colors[2],
+                        active = colors[7],
+                        inactive = colors[7],
                         rounded = False,
-                        highlight_method = "block",
-                        foreground = colors[2],
-                        background = colors[0]
+                        block_highlight_text_color = colors[0],
+                        highlight_color = colors[7],
+                        highlight_method = "line",
+                        foreground = colors[7],
+                        background = colors[1]
                         ),
                 widget.Prompt(
                         prompt = prompt,
-                        font = "Hack Nerd Font Bold",
+                        font = "Iosevka Nerd Font Complete",
                         padding = 10,
-                        foreground = colors[3],
+                        foreground = colors[7],
                         background = colors[0]
                         ),
                 widget.Sep(
                         linewidth = 0,
                         padding = 40,
-                        foreground = colors[2],
+                        foreground = colors[7],
                         background = colors[0]
                         ),
                 widget.WindowName(
-                        foreground = colors[5],
+                        foreground = colors[7],
                         background = colors[0],
                         padding = 0
                         ),
@@ -294,132 +296,95 @@ screens = [
                         padding = 5,
                         icon_size = 18
                         ),
-                widget.TextBox(
-                        text = "",
-                        font = "UbuntuMono Nerd Font Bold",
-                        foreground = colors[4],
-                        background = colors[0],
-                        padding = -3,
-                        fontsize = 37
-                        ),
                 widget.CurrentLayout(
-                        foreground = colors[0],
-                        background = colors[4],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = "",
-                        font = "UbuntuMono Nerd Font Bold",
-                        foreground = colors[3],
-                        background = colors[4],
-                        padding = -3,
-                        fontsize = 37
+                        foreground = colors[6],
+                        background = colors[1],
+                        padding = 10
                         ),
                 widget.Net(
                         interface = "wlp3s0",
                         format = '{down} 祝{up}',
-                        foreground = colors[0],
-                        background = colors[3],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = "",
-                        font = "UbuntuMono Nerd Font Bold",
-                        foreground = colors[7],
-                        background = colors[3],
-                        padding = -3,
-                        fontsize = 37
+                        foreground = colors[5],
+                        background = colors[2],
+                        padding = 10
                         ),
                 widget.Wlan(
                         interface = "wlp3s0",
-                        format = '直 {essid}',
-                        foreground = colors[0],
-                        background = colors[7],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = "",
-                        font = "UbuntuMono Nerd Font Bold",
-                        foreground = colors[1],
-                        background = colors[7],
-                        padding = -3,
-                        fontsize = 37
-                        ),
-                widget.Volume(
-                        theme_path = '/home/ka9/.config/qtile/volume-icons',
-                        foreground = colors[0],
+                        format = '直  {essid}',
+                        foreground = colors[4],
                         background = colors[1],
-                        padding = 0
-                        ),
-                widget.Volume(
-                        foreground = colors[0],
-                        background = colors[1],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = "",
-                        font = "UbuntuMono Nerd Font Bold",
-                        foreground = colors[5],
-                        background = colors[1],
-                        padding = -3,
-                        fontsize = 37
-                        ),
-                widget.BatteryIcon(
-                        battery = "BAT0",
-                        theme_path = '/home/ka9/.config/qtile/battery-icons',
-                        padding = 0,
-                        update_interval = 5,
-                        background = colors[5]
-                        ),
-                widget.Battery(
-                        battery = "BAT0",
-                        charge_char = '',
-                        discharge_char = "",
-                        #format ='{char} {percent:2.0%} {hour:d}h:{min:02d}m',
-                        format ='{percent:2.0%} BAT0 ',
-                        foreground = colors[0],
-                        padding = 5,
-                        background = colors[5]
-                        ),
-                widget.BatteryIcon(
-                        battery = "BAT1",
-                        theme_path = '/home/ka9/.config/qtile/battery-icons',
-                        padding = 0,
-                        update_interval = 5,
-                        background = colors[5]
-                        ),
-                widget.Battery(
-                        battery = "BAT1",
-                        charge_char = '',
-                        discharge_char = "",
-                        #format ='{char} {percent:2.0%} {hour:d}h:{min:02d}m',
-                        format ='{percent:2.0%} BAT1 ',
-                        foreground = colors[0],
-                        padding = 5,
-                        background = colors[5]
-                        ),
-                widget.TextBox(
-                        text = "",
-                        font = "UbuntuMono Nerd Font Bold",
-                        foreground = colors[6],
-                        background = colors[5],
-                        padding = -3,
-                        fontsize = 37
-                        ),
-                widget.Clock(
-                        foreground = colors[0],
-                        background = colors[6],
-                        # format = "%Y-%m-%d %a %I:%M %p"
-                        format = " %A, %B %d - %H:%M"
+                        padding = 10
                         ),
                 widget.Sep(
                         linewidth = 0,
                         padding = 10,
-                        foreground = colors[0],
-                        background = colors[6]
+                        foreground = colors[7],
+                        background = colors[2]
+                        ),
+                widget.Volume(
+                        emoji = True,
+                        fontsize = 16,
+                        foreground = colors[7],
+                        background = colors[2],
+                        padding = 0
+                        ),
+                widget.Volume(
+                        foreground = colors[7],
+                        background = colors[2],
+                        padding = 10
+                        ),
+                widget.Sep(
+                        linewidth = 0,
+                        padding = 10,
+                        foreground = colors[7],
+                        background = colors[1]
+                        ),
+                widget.BatteryIcon(
+                        battery = "BAT0",
+                        theme_path = '/home/ka9/.config/qtile/battery-icons',
+                        padding = 0,
+                        update_interval = 5,
+                        background = colors[1]
+                        ),
+                widget.Battery(
+                        battery = "BAT0",
+                        charge_char = '',
+                        discharge_char = "",
+                        format ='{percent:2.0%} BAT0 ',
+                        foreground = colors[3],
+                        padding = 5,
+                        background = colors[1]
+                        ),
+                widget.BatteryIcon(
+                        battery = "BAT1",
+                        theme_path = '/home/ka9/.config/qtile/battery-icons',
+                        padding = 0,
+                        update_interval = 5,
+                        background = colors[1]
+                        ),
+                widget.Battery(
+                        battery = "BAT1",
+                        charge_char = '',
+                        discharge_char = "",
+                        format ='{percent:2.0%} BAT1 ',
+                        foreground = colors[3],
+                        padding = 5,
+                        background = colors[1]
+                        ),
+                widget.Clock(
+                        foreground = colors[5],
+                        background = colors[2],
+                        padding = 10,
+                        format = "  %A, %B %d - %H:%M"
+                        ),
+                widget.Sep(
+                        linewidth = 0,
+                        padding = 10,
+                        foreground = colors[7],
+                        background = colors[2]
                         ),
             ],
-            20,
+            26,
         ),
     ),
 ]
