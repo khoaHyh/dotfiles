@@ -1,6 +1,7 @@
 let g:ale_disable_lsp = 1
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_termcolors=16
+set nocompatible
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
@@ -9,6 +10,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 colorscheme gruvbox
