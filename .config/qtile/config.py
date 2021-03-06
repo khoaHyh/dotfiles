@@ -226,14 +226,14 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-colors = [["#1d2021", "#1d2021"], # bg0_h
-          ["#282828", "#282828"], # bg0
-          ["#3c3836", "#3c3836"], # bg1
-          ["#fabd2f", "#fabd2f"], # yellow
-          ["#8ec07c", "#8ec07c"], # aqua
-          ["#b8bb26", "#b8bb26"], # green
-          ["#fb4934", "#fb4934"], # red
-          ["#ebdbb2", "#ebdbb2"]] # fg
+colors = [["#1d2021", "#1d2021"], # bg0_h | 0
+          ["#d3869b", "#d3869b"], # purple | 1
+          ["#83a598", "#83a598"], # blue | 2
+          ["#fabd2f", "#fabd2f"], # yellow | 3
+          ["#8ec07c", "#8ec07c"], # aqua | 4
+          ["#b8bb26", "#b8bb26"], # green | 5
+          ["#fb4934", "#fb4934"], # red | 6
+          ["#ebdbb2", "#ebdbb2"]] # fg | 7
 
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -271,7 +271,7 @@ screens = [
                         highlight_color = colors[7],
                         highlight_method = "line",
                         foreground = colors[7],
-                        background = colors[1]
+                        background = colors[0]
                         ),
                 widget.Prompt(
                         prompt = prompt,
@@ -296,92 +296,193 @@ screens = [
                         padding = 5,
                         icon_size = 18
                         ),
-                widget.CurrentLayout(
-                        foreground = colors[6],
-                        background = colors[1],
-                        padding = 10
+                widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[7],
+                        background = colors[0]
                         ),
-                widget.Net(
-                        interface = "wlp3s0",
-                        format = '{down} 祝{up}',
-                        foreground = colors[5],
-                        background = colors[2],
-                        padding = 10
-                        ),
-                widget.Wlan(
-                        interface = "wlp3s0",
-                        format = '直  {essid}',
-                        foreground = colors[4],
-                        background = colors[1],
-                        padding = 10
+                widget.Pomodoro(
+                        color_active = colors[4],
+                        color_break = colors[2],
+                        color_inactive = colors[6],
+                        length_pomodori = 50,
+                        length_short_break = 10,
+                        prefix_active = " ",
+                        prefix_break = "BREAK ",
+                        prefix_long_break = "LONG BREAK ",
+                        prefix_inactive = "",
+                        prefix_paused = "",
+                        padding = 5,
+                        fontsize = 16,
+                        foreground = colors[7],
+                        background = colors[0]
                         ),
                 widget.Sep(
                         linewidth = 0,
-                        padding = 10,
+                        padding = 5,
                         foreground = colors[7],
-                        background = colors[2]
+                        background = colors[0]
+                        ),
+                widget.CurrentLayoutIcon(
+                        scale = 0.75,
+                        foreground = colors[0],
+                        background = colors[6]
+                        ),
+                widget.CurrentLayout(
+                        foreground = colors[0],
+                        background = colors[7],
+                        padding = 5
+                        ),
+                widget.Sep(
+                        linewidth = 0,
+                        padding = 5,
+                        foreground = colors[7],
+                        background = colors[0]
+                        ),
+                widget.Net(
+                        interface = "wlp3s0",
+                        format = '{down}',
+                        foreground = colors[0],
+                        background = colors[7],
+                        padding = 5
+                        ),
+                widget.TextBox(
+                        text = "祝",
+                        fontsize = 16,
+                        padding = 5,
+                        foreground = colors[0],
+                        background = colors[5]
+                        ),
+                widget.Net(
+                        interface = "wlp3s0",
+                        format = '{up}',
+                        foreground = colors[0],
+                        background = colors[7],
+                        padding = 5
+                        ),
+                widget.Sep(
+                        linewidth = 0,
+                        padding = 5,
+                        foreground = colors[7],
+                        background = colors[0]
+                        ),
+                widget.TextBox(
+                        text = "直 ",
+                        fontsize = 16,
+                        padding = 5,
+                        foreground = colors[0],
+                        background = colors[4]
+                        ),
+                widget.Wlan(
+                        interface = "wlp3s0",
+                        format = '{essid}',
+                        foreground = colors[0],
+                        background = colors[7],
+                        padding = 5
+                        ),
+                widget.Sep(
+                        linewidth = 0,
+                        padding = 5,
+                        foreground = colors[7],
+                        background = colors[0]
                         ),
                 widget.Volume(
                         emoji = True,
                         fontsize = 16,
-                        foreground = colors[7],
+                        foreground = colors[0],
                         background = colors[2],
-                        padding = 0
+                        padding = 5
                         ),
                 widget.Volume(
-                        foreground = colors[7],
-                        background = colors[2],
-                        padding = 10
+                        foreground = colors[0],
+                        background = colors[7],
+                        padding = 5
                         ),
                 widget.Sep(
                         linewidth = 0,
-                        padding = 10,
+                        padding = 5,
                         foreground = colors[7],
-                        background = colors[1]
+                        background = colors[0]
                         ),
-                widget.BatteryIcon(
-                        battery = "BAT0",
-                        theme_path = '/home/ka9/.config/qtile/battery-icons',
-                        padding = 0,
+                #widget.BatteryIcon(
+                #        battery = "BAT0",
+                #        theme_path = '/home/ka9/.config/qtile/battery-icons',
+                #        padding = 1,
+                #        update_interval = 5,
+                #        background = colors[3]
+                #        ),
+                #widget.Battery(
+                #        battery = "BAT0",
+                #        charge_char = '',
+                #        discharge_char = "",
+                #        format ='{percent:2.0%} BAT0 ',
+                #        foreground = colors[0],
+                #        padding = 5,
+                #        background = colors[7]
+                #        ),
+                #widget.Sep(
+                #        linewidth = 0,
+                #        padding = 5,
+                #        foreground = colors[7],
+                #        background = colors[0]
+                #        ),
+                #widget.BatteryIcon(
+                #        battery = "BAT1",
+                #        theme_path = '/home/ka9/.config/qtile/battery-icons',
+                #        padding = 1,
+                #        update_interval = 5,
+                #        background = colors[3]
+                #        ),
+                widget.Battery(
+                        battery = "BAT1",
+                        charge_char = '',
+                        discharge_char = "",
+                        empty_char = "",
+                        full_char = "",
+                        unknown_char = "",
+                        low_foreground = colors[6],
+                        low_percentage = 0.25,
+                        notify_below = 0.21,
                         update_interval = 5,
-                        background = colors[1]
+                        fontsize = 18,
+                        format ='{char}',
+                        padding = 5,
+                        foreground = colors[0],
+                        background = colors[3]
                         ),
                 widget.Battery(
-                        battery = "BAT0",
-                        charge_char = '',
-                        discharge_char = "",
-                        format ='{percent:2.0%} BAT0 ',
-                        foreground = colors[3],
-                        padding = 5,
-                        background = colors[1]
-                        ),
-                widget.BatteryIcon(
                         battery = "BAT1",
-                        theme_path = '/home/ka9/.config/qtile/battery-icons',
-                        padding = 0,
                         update_interval = 5,
-                        background = colors[1]
-                        ),
-                widget.Battery(
-                        battery = "BAT1",
-                        charge_char = '',
-                        discharge_char = "",
-                        format ='{percent:2.0%} BAT1 ',
-                        foreground = colors[3],
+                        format ='{percent:2.0%}',
                         padding = 5,
+                        foreground = colors[0],
+                        background = colors[7]
+                        ),
+                widget.Sep(
+                        linewidth = 0,
+                        padding = 5,
+                        foreground = colors[7],
+                        background = colors[0]
+                        ),
+                widget.TextBox(
+                        text = " ",
+                        fontsize = 18,
+                        padding = 5,
+                        foreground = colors[0],
                         background = colors[1]
                         ),
                 widget.Clock(
-                        foreground = colors[5],
-                        background = colors[2],
-                        padding = 10,
-                        format = "  %A, %B %d - %H:%M"
+                        foreground = colors[0],
+                        background = colors[7],
+                        padding = 5,
+                        format = "%A, %B %d - %H:%M"
                         ),
                 widget.Sep(
                         linewidth = 0,
-                        padding = 10,
-                        foreground = colors[7],
-                        background = colors[2]
+                        padding = 5,
+                        foreground = colors[0],
+                        background = colors[7]
                         ),
             ],
             26,
