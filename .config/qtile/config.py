@@ -153,11 +153,11 @@ def init_group_names():
     return [
             ("1 ", {'layout': 'monadtall'}),
             ("2 ", {'layout': 'monadtall'}),
-            ("3 ", {'layout': 'monadtall'}),
-            ("4 ", {'layout': 'monadtall'}),
-            ("5 ", {'layout': 'monadtall'}),
-            ("6 ", {'layout': 'monadtall'}),
-            ("7 ", {'layout': 'monadtall'}),
+            ("3", {'layout': 'monadtall'}),
+            ("4", {'layout': 'monadtall'}),
+            ("5", {'layout': 'monadtall'}),
+            ("6", {'layout': 'monadtall'}),
+            ("7", {'layout': 'monadtall'}),
             ("8 ﭮ", {'layout': 'monadtall'}),
             ("9 ", {'layout': 'monadtall'}),
             ]
