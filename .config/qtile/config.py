@@ -442,6 +442,7 @@ screens = [
                         low_foreground = colors[6],
                         low_percentage = 0.25,
                         notify_below = 0.21,
+                        show_short_text = False,
                         update_interval = 5,
                         fontsize = 18,
                         format ='{char}',
