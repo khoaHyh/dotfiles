@@ -158,7 +158,7 @@ def init_group_names():
             ("5 ", {'layout': 'monadtall'}),
             ("6 ", {'layout': 'monadtall'}),
             ("7 ", {'layout': 'monadtall'}),
-            ("8 ", {'layout': 'monadtall'}),
+            ("8 ﭮ", {'layout': 'monadtall'}),
             ("9 ", {'layout': 'monadtall'}),
             ]
 
@@ -239,8 +239,8 @@ colors = [["#1d2021", "#1d2021"], # bg0_h | 0
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 widget_defaults = dict(
-    font='Iosevka Nerd Font Complete',
-    fontsize=12,
+    font='Iosevka Nerd Font',
+    fontsize=16,
     padding=5,
     background=colors[0]
 )
@@ -257,7 +257,6 @@ screens = [
                         background = colors[0]
                         ),
                 widget.GroupBox(
-                        font = "Iosevka Bold Nerd Font Complete",
                         fontsize = 10,
                         margin_y = 5,
                         margin_x = 0,
@@ -275,7 +274,6 @@ screens = [
                         ),
                 widget.Prompt(
                         prompt = prompt,
-                        font = "Iosevka Nerd Font Complete",
                         padding = 10,
                         foreground = colors[7],
                         background = colors[0]
@@ -368,7 +366,7 @@ screens = [
                         background = colors[0]
                         ),
                 widget.TextBox(
-                        text = "直 ",
+                        text = "直",
                         fontsize = 16,
                         padding = 5,
                         foreground = colors[0],
@@ -466,7 +464,7 @@ screens = [
                         background = colors[0]
                         ),
                 widget.TextBox(
-                        text = " ",
+                        text = "",
                         fontsize = 18,
                         padding = 5,
                         foreground = colors[0],
