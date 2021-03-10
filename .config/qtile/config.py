@@ -240,7 +240,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 widget_defaults = dict(
     font='Iosevka Nerd Font',
-    fontsize=16,
+    fontsize=14,
     padding=5,
     background=colors[0]
 )
@@ -257,7 +257,6 @@ screens = [
                         background = colors[0]
                         ),
                 widget.GroupBox(
-                        fontsize = 10,
                         margin_y = 5,
                         margin_x = 0,
                         padding_y = 3,
@@ -280,7 +279,7 @@ screens = [
                         ),
                 widget.Sep(
                         linewidth = 0,
-                        padding = 40,
+                        padding = 30,
                         foreground = colors[7],
                         background = colors[0]
                         ),
@@ -288,6 +287,12 @@ screens = [
                         foreground = colors[7],
                         background = colors[0],
                         padding = 0
+                        ),
+                widget.Sep(
+                        linewidth = 0,
+                        padding = 30,
+                        foreground = colors[7],
+                        background = colors[0]
                         ),
                 widget.Systray(
                         background = colors[0],
