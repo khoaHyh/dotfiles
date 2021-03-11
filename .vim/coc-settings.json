@@ -1,3 +1,11 @@
 {
-	"diagnostic.displayByAle": true
+	"diagnostic.displayByAle": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "javascriptreact",
+        "json",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx"
+    ]
 }
