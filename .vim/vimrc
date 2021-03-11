@@ -52,9 +52,9 @@ set shortmess+=c
 
 " coc config
 let g:coc_global_extensions = [
-    'coc-eslint',
-    'coc-prettier',
-    ]
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ ]
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
