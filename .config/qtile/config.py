@@ -158,7 +158,7 @@ def init_group_names():
             ("5", {'layout': 'monadtall'}),
             ("6", {'layout': 'monadtall'}),
             ("7", {'layout': 'monadtall'}),
-            ("8 ﭮ", {'layout': 'monadtall'}),
+            ("ﭮ 8", {'layout': 'monadtall'}),
             ("9 ", {'layout': 'monadtall'}),
             ]
 
