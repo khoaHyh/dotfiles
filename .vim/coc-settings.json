@@ -6,6 +6,7 @@
         "json",
         "typescript",
         "typescriptreact",
-        "typescript.tsx"
+        "typescript.tsx",
+        "css"
     ]
 }
