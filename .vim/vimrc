@@ -15,9 +15,11 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 colorscheme gruvbox
+filetype plugin on
 syntax on
 syntax enable
 set background=dark
