@@ -54,7 +54,6 @@ set shortmess+=c
 
 " coc config
 let g:coc_global_extensions = [
-  \ 'coc-eslint',
   \ 'coc-prettier',
   \ ]
 

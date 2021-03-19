@@ -257,6 +257,7 @@ screens = [
                         background = colors[0]
                         ),
                 widget.GroupBox(
+                        fontsize = 12,
                         margin_y = 5,
                         margin_x = 0,
                         padding_y = 3,
@@ -327,6 +328,13 @@ screens = [
                         foreground = colors[7],
                         background = colors[0]
                         ),
+                widget.TextBox(
+                        text = ' ',
+                        foreground = colors[6],
+                        background = colors[0],
+                        padding = -1,
+                        fontsize = 20
+                        ),
                 widget.CurrentLayoutIcon(
                         scale = 0.75,
                         foreground = colors[0],
@@ -337,12 +345,27 @@ screens = [
                         background = colors[7],
                         padding = 5
                         ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
+                widget.TextBox(
+                        text = '',
                         foreground = colors[7],
-                        background = colors[0]
+                        background = colors[0],
+                        padding = 0,
+                        fontsize = 20
                         ),
+                # widget.Sep(
+                #         linewidth = 0,
+                #         padding = 5,
+                #         foreground = colors[7],
+                #         background = colors[0]
+                #         ),
+                widget.TextBox(
+                        text = ' ',
+                        foreground = colors[7],
+                        background = colors[0],
+                        padding = -1,
+                        fontsize = 20
+                        ),
+
                 widget.Net(
                         interface = "wlp3s0",
                         format = '{down}',
@@ -364,12 +387,27 @@ screens = [
                         background = colors[7],
                         padding = 5
                         ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
+                widget.TextBox(
+                        text = '',
                         foreground = colors[7],
-                        background = colors[0]
+                        background = colors[0],
+                        padding = 0,
+                        fontsize = 20
                         ),
+                # widget.Sep(
+                #         linewidth = 0,
+                #         padding = 5,
+                #         foreground = colors[7],
+                #         background = colors[0]
+                #         ),
+                widget.TextBox(
+                        text = ' ',
+                        foreground = colors[4],
+                        background = colors[0],
+                        padding = -1,
+                        fontsize = 20
+                        ),
+
                 widget.TextBox(
                         text = "直",
                         fontsize = 16,
@@ -384,15 +422,30 @@ screens = [
                         background = colors[7],
                         padding = 5
                         ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
+                widget.TextBox(
+                        text = '',
                         foreground = colors[7],
-                        background = colors[0]
+                        background = colors[0],
+                        padding = 0,
+                        fontsize = 20
                         ),
+                # widget.Sep(
+                #         linewidth = 0,
+                #         padding = 5,
+                #         foreground = colors[7],
+                #         background = colors[0]
+                #         ),
+                widget.TextBox(
+                        text = ' ',
+                        foreground = colors[2],
+                        background = colors[0],
+                        padding = -1,
+                        fontsize = 20
+                        ),
+
                 widget.Volume(
                         emoji = True,
-                        fontsize = 16,
+                        fontsize = 14,
                         foreground = colors[0],
                         background = colors[2],
                         padding = 5
@@ -402,12 +455,19 @@ screens = [
                         background = colors[7],
                         padding = 5
                         ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
+                widget.TextBox(
+                        text = '',
                         foreground = colors[7],
-                        background = colors[0]
+                        background = colors[0],
+                        padding = 0,
+                        fontsize = 20
                         ),
+                # widget.Sep(
+                #         linewidth = 0,
+                #         padding = 5,
+                #         foreground = colors[7],
+                #         background = colors[0]
+                #         ),
                 #widget.BatteryIcon(
                 #        battery = "BAT0",
                 #        theme_path = '/home/ka9/.config/qtile/battery-icons',
@@ -437,6 +497,14 @@ screens = [
                 #        update_interval = 5,
                 #        background = colors[3]
                 #        ),
+                widget.TextBox(
+                        text = ' ',
+                        foreground = colors[3],
+                        background = colors[0],
+                        padding = -1,
+                        fontsize = 20
+                        ),
+
                 widget.Battery(
                         battery = "BAT1",
                         charge_char = '',
@@ -449,7 +517,7 @@ screens = [
                         notify_below = 0.21,
                         show_short_text = False,
                         update_interval = 5,
-                        fontsize = 18,
+                        fontsize = 20,
                         format ='{char}',
                         padding = 5,
                         foreground = colors[0],
@@ -463,15 +531,30 @@ screens = [
                         foreground = colors[0],
                         background = colors[7]
                         ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
+                widget.TextBox(
+                        text = '',
                         foreground = colors[7],
-                        background = colors[0]
+                        background = colors[0],
+                        padding = 0,
+                        fontsize = 20
                         ),
+                # widget.Sep(
+                #         linewidth = 0,
+                #         padding = 5,
+                #         foreground = colors[7],
+                #         background = colors[0]
+                #         ),
+                widget.TextBox(
+                        text = ' ',
+                        foreground = colors[1],
+                        background = colors[0],
+                        padding = -1,
+                        fontsize = 20
+                        ),
+
                 widget.TextBox(
                         text = "",
-                        fontsize = 18,
+                        fontsize = 20,
                         padding = 5,
                         foreground = colors[0],
                         background = colors[1]
@@ -489,7 +572,7 @@ screens = [
                         background = colors[7]
                         ),
             ],
-            26,
+            20,
         ),
     ),
 ]
