@@ -462,41 +462,6 @@ screens = [
                         padding = 0,
                         fontsize = 20
                         ),
-                # widget.Sep(
-                #         linewidth = 0,
-                #         padding = 5,
-                #         foreground = colors[7],
-                #         background = colors[0]
-                #         ),
-                #widget.BatteryIcon(
-                #        battery = "BAT0",
-                #        theme_path = '/home/ka9/.config/qtile/battery-icons',
-                #        padding = 1,
-                #        update_interval = 5,
-                #        background = colors[3]
-                #        ),
-                #widget.Battery(
-                #        battery = "BAT0",
-                #        charge_char = '',
-                #        discharge_char = "",
-                #        format ='{percent:2.0%} BAT0 ',
-                #        foreground = colors[0],
-                #        padding = 5,
-                #        background = colors[7]
-                #        ),
-                #widget.Sep(
-                #        linewidth = 0,
-                #        padding = 5,
-                #        foreground = colors[7],
-                #        background = colors[0]
-                #        ),
-                #widget.BatteryIcon(
-                #        battery = "BAT1",
-                #        theme_path = '/home/ka9/.config/qtile/battery-icons',
-                #        padding = 1,
-                #        update_interval = 5,
-                #        background = colors[3]
-                #        ),
                 widget.TextBox(
                         text = ' ',
                         foreground = colors[3],
@@ -504,9 +469,8 @@ screens = [
                         padding = -1,
                         fontsize = 20
                         ),
-
                 widget.Battery(
-                        battery = "BAT1",
+                        battery = "BAT0",
                         charge_char = '',
                         discharge_char = "",
                         empty_char = "",
@@ -524,7 +488,7 @@ screens = [
                         background = colors[3]
                         ),
                 widget.Battery(
-                        battery = "BAT1",
+                        battery = "BAT0",
                         update_interval = 5,
                         format ='{percent:2.0%}',
                         padding = 5,
