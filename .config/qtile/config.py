@@ -233,7 +233,8 @@ colors = [["#1d2021", "#1d2021"], # bg0_h | 0
           ["#8ec07c", "#8ec07c"], # aqua | 4
           ["#b8bb26", "#b8bb26"], # green | 5
           ["#fb4934", "#fb4934"], # red | 6
-          ["#ebdbb2", "#ebdbb2"]] # fg | 7
+          ["#ebdbb2", "#ebdbb2"], # fg | 7
+          ["#3c3836", "#3c3836"]] # bg1 | 8
 
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -337,17 +338,17 @@ screens = [
                         ),
                 widget.CurrentLayoutIcon(
                         scale = 0.75,
-                        foreground = colors[0],
+                        foreground = colors[7],
                         background = colors[6]
                         ),
                 widget.CurrentLayout(
-                        foreground = colors[0],
-                        background = colors[7],
+                        foreground = colors[6],
+                        background = colors[8],
                         padding = 5
                         ),
                 widget.TextBox(
                         text = '',
-                        foreground = colors[7],
+                        foreground = colors[8],
                         background = colors[0],
                         padding = 0,
                         fontsize = 20
@@ -360,7 +361,7 @@ screens = [
                 #         ),
                 widget.TextBox(
                         text = ' ',
-                        foreground = colors[7],
+                        foreground = colors[8],
                         background = colors[0],
                         padding = -1,
                         fontsize = 20
@@ -369,27 +370,27 @@ screens = [
                 widget.Net(
                         interface = "wlp3s0",
                         format = '{down}',
-                        foreground = colors[0],
-                        background = colors[7],
+                        foreground = colors[5],
+                        background = colors[8],
                         padding = 5
                         ),
                 widget.TextBox(
                         text = "祝",
                         fontsize = 16,
                         padding = 5,
-                        foreground = colors[0],
+                        foreground = colors[8],
                         background = colors[5]
                         ),
                 widget.Net(
                         interface = "wlp3s0",
                         format = '{up}',
-                        foreground = colors[0],
-                        background = colors[7],
+                        foreground = colors[5],
+                        background = colors[8],
                         padding = 5
                         ),
                 widget.TextBox(
                         text = '',
-                        foreground = colors[7],
+                        foreground = colors[8],
                         background = colors[0],
                         padding = 0,
                         fontsize = 20
@@ -412,19 +413,19 @@ screens = [
                         text = "直",
                         fontsize = 16,
                         padding = 5,
-                        foreground = colors[0],
+                        foreground = colors[8],
                         background = colors[4]
                         ),
                 widget.Wlan(
                         interface = "wlp3s0",
                         format = '{essid}',
-                        foreground = colors[0],
-                        background = colors[7],
+                        foreground = colors[4],
+                        background = colors[8],
                         padding = 5
                         ),
                 widget.TextBox(
                         text = '',
-                        foreground = colors[7],
+                        foreground = colors[8],
                         background = colors[0],
                         padding = 0,
                         fontsize = 20
@@ -446,18 +447,18 @@ screens = [
                 widget.Volume(
                         emoji = True,
                         fontsize = 14,
-                        foreground = colors[0],
+                        foreground = colors[8],
                         background = colors[2],
                         padding = 5
                         ),
                 widget.Volume(
-                        foreground = colors[0],
-                        background = colors[7],
+                        foreground = colors[2],
+                        background = colors[8],
                         padding = 5
                         ),
                 widget.TextBox(
                         text = '',
-                        foreground = colors[7],
+                        foreground = colors[8],
                         background = colors[0],
                         padding = 0,
                         fontsize = 20
@@ -484,7 +485,7 @@ screens = [
                         fontsize = 20,
                         format ='{char}',
                         padding = 5,
-                        foreground = colors[0],
+                        foreground = colors[8],
                         background = colors[3]
                         ),
                 widget.Battery(
@@ -492,12 +493,12 @@ screens = [
                         update_interval = 5,
                         format ='{percent:2.0%}',
                         padding = 5,
-                        foreground = colors[0],
-                        background = colors[7]
+                        foreground = colors[3],
+                        background = colors[8]
                         ),
                 widget.TextBox(
                         text = '',
-                        foreground = colors[7],
+                        foreground = colors[8],
                         background = colors[0],
                         padding = 0,
                         fontsize = 20
@@ -520,12 +521,12 @@ screens = [
                         text = "",
                         fontsize = 20,
                         padding = 5,
-                        foreground = colors[0],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                 widget.Clock(
-                        foreground = colors[0],
-                        background = colors[7],
+                        foreground = colors[1],
+                        background = colors[8],
                         padding = 5,
                         format = "%A, %B %d - %H:%M"
                         ),
@@ -533,7 +534,7 @@ screens = [
                         linewidth = 0,
                         padding = 5,
                         foreground = colors[0],
-                        background = colors[7]
+                        background = colors[8]
                         ),
             ],
             20,
