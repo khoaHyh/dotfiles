@@ -2,7 +2,9 @@ let g:ale_disable_lsp = 1
 
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark = 'medium'
-"let g:gruvbox_termcolors=16
+
+"let g:tokyonight_style = 'night' " available: night, storm
+"let g:tokyonight_enable_italic = 1
 
 set nocompatible
 
@@ -23,9 +25,10 @@ Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 colorscheme gruvbox
+"colorscheme tokyonight
 filetype plugin on
 syntax on
-syntax enable
+"syntax enable
 set background=dark
 set backspace=indent,eol,start
 set wildmenu

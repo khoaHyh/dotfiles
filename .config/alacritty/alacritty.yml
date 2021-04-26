@@ -1,3 +1,13 @@
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+    
+
 window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
@@ -23,15 +33,19 @@ scrolling:
 font:
   normal:
     family: UbuntuMono Nerd Font
+    style: Regular
 
   bold:
     family: UbuntuMono Nerd Font
+    style: Bold
 
   italic:
     family: UbuntuMono Nerd Font
+    style: Italic
 
   bold_italic:
     family: UbuntuMono Nerd Font
+    style: Bold Italic
 
   size: 16
 
