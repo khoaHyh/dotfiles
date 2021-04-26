@@ -1,6 +1,9 @@
 let g:ale_disable_lsp = 1
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_termcolors=16
+
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark = 'medium'
+"let g:gruvbox_termcolors=16
+
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
@@ -16,6 +19,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
+Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -29,11 +33,19 @@ set autoindent
 set smartindent
 set incsearch
 set ruler
-" set termguicolors
 set number
-set tabstop=4
+"set tabstop=4
+set tabstop=2
 set expandtab
-set shiftwidth=4
+"set shiftwidth=4
+set shiftwidth=2
+
+" Enable true colors
+if has('termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " TextEdit might fail if hidden is not set.
 set hidden

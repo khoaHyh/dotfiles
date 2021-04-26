@@ -37,7 +37,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 #terminal = guess_terminal()
-terminal = "termite"
+terminal = "alacritty"
 
 keys = [
     Key([mod, "shift"], "l",
