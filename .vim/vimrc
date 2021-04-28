@@ -16,12 +16,15 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
 
 " Vim color schemes
+"Plug 'morhetz/gruvbox'
 Plug 'franbach/miramare'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'sainnhe/everforest'
 
 call plug#end()
 
 set termguicolors
+set background=dark
 
 "let g:gruvbox_italic=1
 "let g:gruvbox_contrast_dark = 'medium'
@@ -33,13 +36,17 @@ let g:miramare_enable_bold = 1
 "let g:tokyonight_style = 'night' " available: night, storm
 "let g:tokyonight_enable_italic = 1
 
+"let g:everforest_background = 'medium'
+"let g:everforest_enable_italic = 1
+"let g:everforest_disable_italic_comment = 1
+
 "colorscheme gruvbox
 colorscheme miramare
 "colorscheme tokyonight
+"colorscheme everforest
 
 filetype plugin on
 syntax on
-set background=dark
 set backspace=indent,eol,start
 set wildmenu
 set autoindent
