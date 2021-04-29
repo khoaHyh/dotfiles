@@ -16,7 +16,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
 
 " Vim color schemes
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 Plug 'franbach/miramare'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'sainnhe/everforest'
