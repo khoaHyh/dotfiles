@@ -2,7 +2,7 @@
 # hsetroot -cover ~/Wallpapers/mobpsycho-wp.png &
 
 # Set/restore dwall wallpaper after login/reboot
-dwall -s island &
+dwall -s aurora &
 
 # Personal keybinds
 xbindkeys

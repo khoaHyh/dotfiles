@@ -1,5 +1,4 @@
 set nocompatible
-let g:ale_disable_lsp = 1
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
@@ -26,6 +25,9 @@ call plug#end()
 set termguicolors
 set background=dark
 
+let g:ale_disable_lsp = 1
+let g:rustfmt_autosave = 1 " enable automatic running of :RustFmt
+
 "let g:gruvbox_italic=1
 "let g:gruvbox_contrast_dark = 'medium'
 
@@ -45,7 +47,8 @@ colorscheme miramare
 "colorscheme tokyonight
 "colorscheme everforest
 
-filetype plugin on
+filetype plugin indent on
+syntax enable
 syntax on
 set backspace=indent,eol,start
 set wildmenu
