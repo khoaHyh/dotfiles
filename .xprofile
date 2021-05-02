@@ -1,8 +1,8 @@
 # Set wallpaper
-# hsetroot -cover ~/Wallpapers/mobpsycho-wp.png &
+hsetroot -cover ~/Wallpapers/highwaydrive_wp.jpg &
 
 # Set/restore dwall wallpaper after login/reboot
-dwall -s aurora &
+#dwall -s aurora &
 
 # Personal keybinds
 xbindkeys

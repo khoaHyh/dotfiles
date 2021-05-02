@@ -1,4 +1,4 @@
-![demo](https://raw.githubusercontent.com/khoaHyh/dotfiles/master/basmati/manjaro-rice-5.png)
+![demo](./basmati/manjaro-rice-6.png)
 
 ### Built With
 
