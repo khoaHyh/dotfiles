@@ -13,6 +13,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
+Plug 'vimwiki/vimwiki'
 
 " Vim color schemes
 Plug 'morhetz/gruvbox'
@@ -27,6 +28,14 @@ set background=dark
 
 let g:ale_disable_lsp = 1
 let g:rustfmt_autosave = 1 " enable automatic running of :RustFmt
+
+" Vimwiki config
+let wiki_1 = {}
+let wiki_1.path = '~/Documents/notes/'
+let wiki_1.syntax = 'markdown'
+let wiki_1.index = 'index'
+let wiki_1.ext = '.md'
+let g:vimwiki_list = [wiki_1]
 
 "let g:gruvbox_italic=1
 "let g:gruvbox_contrast_dark = 'medium'
