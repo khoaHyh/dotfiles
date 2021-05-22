@@ -1,12 +1,20 @@
 {
 	"diagnostic.displayByAle": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "javascript",
-        "javascriptreact",
-        "json",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-        "css"
-    ]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "json",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "css"
+  ],
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "disableWorkspaceFolders": true,
+      "filetypes": ["go"]
+    }
+  }
 }
