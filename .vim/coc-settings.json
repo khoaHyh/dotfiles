@@ -7,14 +7,18 @@
     "typescript",
     "typescriptreact",
     "typescript.tsx",
-    "css"
+    "css",
+    "rust",
+    "go"
   ],
   "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod"],
-      "disableWorkspaceFolders": true,
       "filetypes": ["go"]
     }
+  },
+  "go.goplsOptions": {
+    "staticcheck": true
   }
 }
