@@ -4,5 +4,8 @@ hsetroot -cover ~/Wallpapers/highwaydrive_wp.jpg &
 # Set/restore dwall wallpaper after login/reboot
 #dwall -s aurora &
 
+# Remap caps lock to escape
+setxkbmap -option caps:escape
+
 # Personal keybinds
 xbindkeys
