@@ -1,5 +1,5 @@
 # Set wallpaper
-hsetroot -cover ~/Wallpapers/highwaydrive_wp.jpg &
+hsetroot -cover ~/Wallpapers/vcr-sheng-lam.jpg
 
 # Set/restore dwall wallpaper after login/reboot
 #dwall -s aurora &
