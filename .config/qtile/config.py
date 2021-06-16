@@ -247,300 +247,343 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.Sep(
-                        lineWidth = 0,
-                        padding = 6,
-                        foreground = colors[0],
-                        background = colors[0]
-                        ),
-                widget.GroupBox(
-                        fontsize = 12,
-                        margin_y = 5,
-                        margin_x = 0,
-                        padding_y = 3,
-                        padding_x = 5,
-                        borderwidth = 3,
-                        active = colors[7],
-                        inactive = colors[7],
-                        rounded = False,
-                        block_highlight_text_color = colors[0],
-                        highlight_color = colors[7],
-                        highlight_method = "line",
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Prompt(
-                        prompt = prompt,
-                        padding = 10,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 30,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.WindowName(
-                        foreground = colors[7],
-                        background = colors[0],
-                        padding = 0
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 30,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Systray(
-                        background = colors[0],
-                        padding = 5,
-                        icon_size = 18
-                        ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Pomodoro(
-                        color_active = colors[4],
-                        color_break = colors[2],
-                        color_inactive = colors[6],
-                        length_pomodori = 50,
-                        length_short_break = 10,
-                        prefix_active = " ",
-                        prefix_break = "BREAK ",
-                        prefix_long_break = "LONG BREAK ",
-                        prefix_inactive = "",
-                        prefix_paused = "",
-                        padding = 5,
-                        fontsize = 16,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.TextBox(
-                        text = ' ',
-                        foreground = colors[6],
-                        background = colors[0],
-                        padding = -1,
-                        fontsize = 20
-                        ),
-                widget.CurrentLayoutIcon(
-                        scale = 0.75,
-                        foreground = colors[7],
-                        background = colors[6]
-                        ),
-                widget.CurrentLayout(
-                        foreground = colors[6],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = '',
-                        foreground = colors[8],
-                        background = colors[0],
-                        padding = 0,
-                        fontsize = 20
-                        ),
-                # widget.Sep(
-                #         linewidth = 0,
-                #         padding = 5,
-                #         foreground = colors[7],
-                #         background = colors[0]
-                #         ),
-                widget.TextBox(
-                        text = ' ',
-                        foreground = colors[8],
-                        background = colors[0],
-                        padding = -1,
-                        fontsize = 20
-                        ),
+def init_widgets_list(): 
+    widgets_list = [
+        widget.Sep(
+                lineWidth = 0,
+                padding = 6,
+                foreground = colors[0],
+                background = colors[0]
+                ),
+        widget.GroupBox(
+                fontsize = 12,
+                margin_y = 5,
+                margin_x = 0,
+                padding_y = 3,
+                padding_x = 5,
+                borderwidth = 3,
+                active = colors[7],
+                inactive = colors[7],
+                rounded = False,
+                block_highlight_text_color = colors[0],
+                highlight_color = colors[7],
+                highlight_method = "line",
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Prompt(
+                prompt = prompt,
+                padding = 10,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 30,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.WindowName(
+                foreground = colors[7],
+                background = colors[0],
+                padding = 0
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 30,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Systray(
+                background = colors[0],
+                padding = 5,
+                icon_size = 18
+                ),
+        widget.Sep(
+                linewidth = 1,
+                padding = 10,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Pomodoro(
+                color_active = colors[4],
+                color_break = colors[2],
+                color_inactive = colors[6],
+                length_pomodori = 50,
+                length_short_break = 10,
+                prefix_active = " ",
+                prefix_break = "BREAK ",
+                prefix_long_break = "LONG BREAK ",
+                prefix_inactive = "",
+                prefix_paused = "",
+                padding = 5,
+                fontsize = 16,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.TextBox(
+                text = ' ',
+                foreground = colors[6],
+                background = colors[0],
+                padding = -1,
+                fontsize = 20
+                ),
+        widget.CurrentLayoutIcon(
+                scale = 0.75,
+                foreground = colors[7],
+                background = colors[6]
+                ),
+        widget.CurrentLayout(
+                foreground = colors[6],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.TextBox(
+                text = '',
+                foreground = colors[8],
+                background = colors[0],
+                padding = 0,
+                fontsize = 20
+                ),
+        # widget.Sep(
+        #         linewidth = 0,
+        #         padding = 5,
+        #         foreground = colors[7],
+        #         background = colors[0]
+        #         ),
+        widget.TextBox(
+                text = ' ',
+                foreground = colors[8],
+                background = colors[0],
+                padding = -1,
+                fontsize = 20
+                ),
 
-                widget.Net(
-                        interface = "wlp3s0",
-                        format = '{down}',
-                        foreground = colors[5],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = "祝",
-                        fontsize = 16,
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[5]
-                        ),
-                widget.Net(
-                        interface = "wlp3s0",
-                        format = '{up}',
-                        foreground = colors[5],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = '',
-                        foreground = colors[8],
-                        background = colors[0],
-                        padding = 0,
-                        fontsize = 20
-                        ),
-                # widget.Sep(
-                #         linewidth = 0,
-                #         padding = 5,
-                #         foreground = colors[7],
-                #         background = colors[0]
-                #         ),
-                widget.TextBox(
-                        text = ' ',
-                        foreground = colors[4],
-                        background = colors[0],
-                        padding = -1,
-                        fontsize = 20
-                        ),
+        widget.Net(
+                interface = "wlp3s0",
+                format = '{down}',
+                foreground = colors[5],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.TextBox(
+                text = "祝",
+                fontsize = 16,
+                padding = 5,
+                foreground = colors[8],
+                background = colors[5]
+                ),
+        widget.Net(
+                interface = "wlp3s0",
+                format = '{up}',
+                foreground = colors[5],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.TextBox(
+                text = '',
+                foreground = colors[8],
+                background = colors[0],
+                padding = 0,
+                fontsize = 20
+                ),
+        # widget.Sep(
+        #         linewidth = 0,
+        #         padding = 5,
+        #         foreground = colors[7],
+        #         background = colors[0]
+        #         ),
+        widget.TextBox(
+                text = ' ',
+                foreground = colors[4],
+                background = colors[0],
+                padding = -1,
+                fontsize = 20
+                ),
 
-                widget.TextBox(
-                        text = "直",
-                        fontsize = 16,
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[4]
-                        ),
-                widget.Wlan(
-                        interface = "wlp3s0",
-                        format = '{essid}',
-                        foreground = colors[4],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = '',
-                        foreground = colors[8],
-                        background = colors[0],
-                        padding = 0,
-                        fontsize = 20
-                        ),
-                # widget.Sep(
-                #         linewidth = 0,
-                #         padding = 5,
-                #         foreground = colors[7],
-                #         background = colors[0]
-                #         ),
-                widget.TextBox(
-                        text = ' ',
-                        foreground = colors[2],
-                        background = colors[0],
-                        padding = -1,
-                        fontsize = 20
-                        ),
+        widget.TextBox(
+                text = "直",
+                fontsize = 16,
+                padding = 5,
+                foreground = colors[8],
+                background = colors[4]
+                ),
+        widget.Wlan(
+                interface = "wlp3s0",
+                format = '{essid}',
+                foreground = colors[4],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.TextBox(
+                text = '',
+                foreground = colors[8],
+                background = colors[0],
+                padding = 0,
+                fontsize = 20
+                ),
+        # widget.Sep(
+        #         linewidth = 0,
+        #         padding = 5,
+        #         foreground = colors[7],
+        #         background = colors[0]
+        #         ),
+        widget.TextBox(
+                text = ' ',
+                foreground = colors[2],
+                background = colors[0],
+                padding = -1,
+                fontsize = 20
+                ),
 
-                widget.Volume(
-                        emoji = True,
-                        fontsize = 14,
-                        foreground = colors[8],
-                        background = colors[2],
-                        padding = 5
-                        ),
-                widget.Volume(
-                        foreground = colors[2],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = '',
-                        foreground = colors[8],
-                        background = colors[0],
-                        padding = 0,
-                        fontsize = 20
-                        ),
-                widget.TextBox(
-                        text = ' ',
-                        foreground = colors[3],
-                        background = colors[0],
-                        padding = -1,
-                        fontsize = 20
-                        ),
-                widget.Battery(
-                        battery = "BAT0",
-                        charge_char = '',
-                        discharge_char = "",
-                        empty_char = "",
-                        full_char = "",
-                        unknown_char = "",
-                        low_foreground = colors[6],
-                        low_percentage = 0.25,
-                        notify_below = 0.21,
-                        show_short_text = False,
-                        update_interval = 5,
-                        fontsize = 20,
-                        format ='{char}',
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[3]
-                        ),
-                widget.Battery(
-                        battery = "BAT0",
-                        update_interval = 5,
-                        format ='{percent:2.0%}',
-                        padding = 5,
-                        foreground = colors[3],
-                        background = colors[8]
-                        ),
-                widget.TextBox(
-                        text = '',
-                        foreground = colors[8],
-                        background = colors[0],
-                        padding = 0,
-                        fontsize = 20
-                        ),
-                # widget.Sep(
-                #         linewidth = 0,
-                #         padding = 5,
-                #         foreground = colors[7],
-                #         background = colors[0]
-                #         ),
-                widget.TextBox(
-                        text = ' ',
-                        foreground = colors[1],
-                        background = colors[0],
-                        padding = -1,
-                        fontsize = 20
-                        ),
+        widget.Volume(
+                emoji = True,
+                fontsize = 14,
+                foreground = colors[8],
+                background = colors[2],
+                padding = 5
+                ),
+        widget.Volume(
+                foreground = colors[2],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.TextBox(
+                text = '',
+                foreground = colors[8],
+                background = colors[0],
+                padding = 0,
+                fontsize = 20
+                ),
+        widget.TextBox(
+                text = ' ',
+                foreground = colors[3],
+                background = colors[0],
+                padding = -1,
+                fontsize = 20
+                ),
+        widget.Battery(
+                battery = "BAT1",
+                charge_char = '',
+                discharge_char = "",
+                empty_char = "",
+                full_char = "",
+                unknown_char = "",
+                low_foreground = colors[6],
+                low_percentage = 0.25,
+                notify_below = 0.21,
+                show_short_text = False,
+                update_interval = 5,
+                fontsize = 20,
+                format ='{char}',
+                padding = 5,
+                foreground = colors[8],
+                background = colors[3]
+                ),
+        widget.Battery(
+                battery = "BAT1",
+                update_interval = 5,
+                format ='{percent:2.0%}',
+                padding = 5,
+                foreground = colors[3],
+                background = colors[8]
+                ),
+        widget.TextBox(
+                text = '',
+                foreground = colors[8],
+                background = colors[0],
+                padding = 0,
+                fontsize = 20
+                ),
+        # widget.Sep(
+        #         linewidth = 0,
+        #         padding = 5,
+        #         foreground = colors[7],
+        #         background = colors[0]
+        #         ),
+        widget.TextBox(
+                text = ' ',
+                foreground = colors[1],
+                background = colors[0],
+                padding = -1,
+                fontsize = 20
+                ),
 
-                widget.TextBox(
-                        text = "",
-                        fontsize = 20,
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[1]
-                        ),
-                widget.Clock(
-                        foreground = colors[1],
-                        background = colors[8],
-                        padding = 5,
-                        format = "%A, %B %d - %H:%M"
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[0],
-                        background = colors[8]
-                        ),
-            ],
-            20,
-        ),
-    ),
-]
+        widget.TextBox(
+                text = "",
+                fontsize = 20,
+                padding = 5,
+                foreground = colors[8],
+                background = colors[1]
+                ),
+        widget.Clock(
+                foreground = colors[1],
+                background = colors[8],
+                padding = 5,
+                format = "%A, %B %d - %H:%M"
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[0],
+                background = colors[8]
+                ),
+        ]
+    return widgets_list
+
+def init_widgets_screen1():
+    widgets_screen1 = init_widgets_list()
+    del widgets_screen1[7:8]               # Slicing removes unwanted widgets (systray) on Monitors 1,3
+    return widgets_screen1
+
+def init_widgets_screen2():
+    widgets_screen2 = init_widgets_list()
+    return widgets_screen2    
+
+
+def init_screens():
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20))]
+
+
+if __name__ in ["config", "__main__"]:
+    screens = init_screens()
+    widgets_list = init_widgets_list()
+    widgets_screen1 = init_widgets_screen1()
+    widgets_screen2 = init_widgets_screen2()
+
+def window_to_prev_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+
+def window_to_next_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+
+def window_to_previous_screen(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group)
+
+def window_to_next_screen(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group)
+
+def switch_screens(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    group = qtile.screens[i - 1].group
+    qtile.current_screen.set_group(group)
 
 # Drag floating layouts.
 mouse = [
