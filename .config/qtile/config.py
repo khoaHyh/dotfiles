@@ -78,6 +78,15 @@ keys = [
         lazy.window.toggle_fullscreen(),
         desc="toggle fullscreen"
         ),
+    ### Switch focus to specific monitor (out of two)
+    Key([mod], "w",
+        lazy.to_screen(0),
+        desc='Keyboard focus to monitor 1'
+        ),
+    Key([mod], "e",
+        lazy.to_screen(1),
+        desc='Keyboard focus to monitor 2'
+        ),
     # Switch between windows in current stack pane
     Key([mod], "k", 
         lazy.layout.down(),
@@ -169,12 +178,27 @@ if __name__ in ["config", "__main__"]:
     group_names = init_group_names()
     groups =  init_groups()
 
+def go_to_group(group):
+    def f(qtile):
+        if group in '12345':
+            qtile.cmd_to_screen(0)
+            qtile.groupMap[group].cmd_toscreen()
+        elif group in '6789':
+            qtile.cmd_to_screen(1)
+            qtile.groupMap[group].cmd_toscreen()
+
+    return f
+
 # Make it so that keybindings match position in array
 for i, (name, kwargs) in enumerate(group_names, 1):
     # Switch to another group
     keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
     # Send current window to another group
     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
+
+# for i in '123456789':
+#     keys.append(Key([mod], i, lazy.function(go_to_group(i)))),
+#     keys.append(Key([mod, 'shift'], i, lazy.window.togroup(i)))
 
 #for i in groups:
 #    keys.extend([
@@ -539,7 +563,6 @@ def init_widgets_list():
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[7:8]               # Slicing removes unwanted widgets (systray) on Monitors 1,3
     return widgets_screen1
 
 def init_widgets_screen2():
