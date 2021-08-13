@@ -1,5 +1,5 @@
 # Set wallpaper
-hsetroot -cover ~/Wallpapers/vcr-sheng-lam.jpg
+hsetroot -cover ~/Wallpapers/solar-system.jpg
 
 # Set/restore dwall wallpaper after login/reboot
 #dwall -s aurora &

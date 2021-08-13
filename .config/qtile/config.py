@@ -32,7 +32,8 @@ import subprocess
 from typing import List  # noqa: F401
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen, KeyChord
-from libqtile.lazy import lazy
+# from libqtile.lazy import lazy
+from libqtile.command import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
@@ -158,43 +159,55 @@ keys = [
 # groups = [Group(i) for i in "123456789"]
 
 # Set names for workspaces
-def init_group_names():
-    return [
-            ("1 ", {'layout': 'monadtall'}),
-            ("2 ", {'layout': 'monadtall'}),
-            ("3", {'layout': 'monadtall'}),
-            ("4", {'layout': 'monadtall'}),
-            ("5", {'layout': 'monadtall'}),
-            ("6", {'layout': 'monadtall'}),
-            ("7", {'layout': 'monadtall'}),
-            ("ﭮ 8", {'layout': 'monadtall'}),
-            ("9 ", {'layout': 'monadtall'}),
-            ]
+# def init_group_names():
+#     return [
+#             ("1 ", {'layout': 'monadtall'}),
+#             ("2 ", {'layout': 'monadtall'}),
+#             ("3", {'layout': 'monadtall'}),
+#             ("4", {'layout': 'monadtall'}),
+#             ("5", {'layout': 'monadtall'}),
+#             ("6", {'layout': 'monadtall'}),
+#             ("7", {'layout': 'monadtall'}),
+#             ("ﭮ 8", {'layout': 'monadtall'}),
+#             ("9 ", {'layout': 'monadtall'}),
+#             ]
 
-def init_groups():
-    return [Group(name, **kwargs) for name, kwargs in group_names]
+# def init_groups():
+#     return [Group(name, **kwargs) for name, kwargs in group_names]
 
-if __name__ in ["config", "__main__"]:
-    group_names = init_group_names()
-    groups =  init_groups()
+# if __name__ in ["config", "__main__"]:
+#     group_names = init_group_names()
+#     groups =  init_groups()
 
-def go_to_group(group):
-    def f(qtile):
-        if group in '12345':
-            qtile.cmd_to_screen(0)
-            qtile.groupMap[group].cmd_toscreen()
-        elif group in '6789':
-            qtile.cmd_to_screen(1)
-            qtile.groupMap[group].cmd_toscreen()
+# def go_to_group(group):
+#     def f(qtile):
+#         if group in '12345':
+#             qtile.cmd_to_screen(0)
+#             qtile.groupMap[group].cmd_toscreen()
+#         else:
+#             qtile.cmd_to_screen(1)
+#             qtile.groupMap[group].cmd_toscreen()
 
-    return f
+#     return f
 
 # Make it so that keybindings match position in array
-for i, (name, kwargs) in enumerate(group_names, 1):
-    # Switch to another group
-    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
-    # Send current window to another group
-    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
+# for i, (name, kwargs) in enumerate(group_names, 1):
+#     # Switch to another group
+#     keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
+#     # Send current window to another group
+#     keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
+
+
+pinned_groups = ['12345', '67890']
+all_groups = ''.join(pinned_groups)
+
+groups = [Group(i) for i in all_groups]
+
+for j, names in enumerate(pinned_groups):
+    keys.extend(Key([mod], i, lazy.to_screen(j), lazy.group[i].toscreen()) for i in names)
+
+keys.extend(Key([mod, 'shift'], i, lazy.window.togroup(i)) for i in all_groups)
+
 
 # for i in '123456789':
 #     keys.append(Key([mod], i, lazy.function(go_to_group(i)))),
@@ -232,7 +245,7 @@ layouts = [
     layout.Tile(shift_windows=True, **layout_theme),
     layout.Stack(num_stacks=2),
     layout.TreeTab(
-        font = "Hack Nerd Font",
+        font = "FuraCode Nerd Font, Bold",
         fontsize = 10,
         sections = ["FIRST", "SECOND"],
         section_fontsize = 11,
@@ -264,7 +277,7 @@ colors = [["#1d2021", "#1d2021"], # bg0_h | 0
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 widget_defaults = dict(
-    font='Iosevka Nerd Font',
+    font='FuraCode Nerd Font, Bold',
     fontsize=14,
     padding=5,
     background=colors[0]

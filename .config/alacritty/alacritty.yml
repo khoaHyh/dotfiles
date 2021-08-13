@@ -32,19 +32,19 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: UbuntuMono Nerd Font
-    style: Regular
+    family: FuraCode Nerd Font
+    style: Medium
 
   bold:
-    family: UbuntuMono Nerd Font
+    family: FuraCode Nerd Font
     style: Bold
 
   italic:
-    family: UbuntuMono Nerd Font
+    family: FuraCode Nerd Font
     style: Italic
 
   bold_italic:
-    family: UbuntuMono Nerd Font
+    family: FuraCode Nerd Font
     style: Bold Italic
 
   size: 12
