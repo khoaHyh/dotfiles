@@ -68,7 +68,7 @@ keys = [
         desc='toggle window between minimum and maximum sizes'
         ),
     Key([mod, "shift"], "Return",
-        lazy.spawn("rofi -show drun"),
+        lazy.spawn("/home/ka9/.config/rofi/bin/launcher_colorful"),
         desc='Run Launcher'
         ),
     Key([mod, "shift"], "f",
@@ -264,12 +264,12 @@ layouts = [
 ]
 
 colors = [["#1d2021", "#1d2021"], # bg0_h | 0
-          ["#d3869b", "#d3869b"], # purple | 1
-          ["#83a598", "#83a598"], # blue | 2
-          ["#fabd2f", "#fabd2f"], # yellow | 3
-          ["#8ec07c", "#8ec07c"], # aqua | 4
-          ["#b8bb26", "#b8bb26"], # green | 5
-          ["#fb4934", "#fb4934"], # red | 6
+          ["#C7CEEA", "#C7CEEA"], # crayola's periwinkle | 1
+          ["#E2F0CB", "#E2F0CB"], # dirty white | 2
+          ["#FFDAC1", "#FFDAC1"], # yellow | 3
+          ["#B5EAD7", "#B5EAD7"], # magic mint | 4
+          ["#FFB7B2", "#FFB7B2"], # melon | 5
+          ["#FF9AA2", "#FF9AA2"], # pink salmon | 6
           ["#ebdbb2", "#ebdbb2"], # fg | 7
           ["#3c3836", "#3c3836"]] # bg1 | 8
 
@@ -278,7 +278,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 widget_defaults = dict(
     font='FuraCode Nerd Font, Bold',
-    fontsize=14,
+    fontsize=12,
     padding=5,
     background=colors[0]
 )
@@ -342,35 +342,6 @@ def init_widgets_list():
                 foreground = colors[7],
                 background = colors[0]
                 ),
-        widget.Pomodoro(
-                color_active = colors[4],
-                color_break = colors[2],
-                color_inactive = colors[6],
-                length_pomodori = 50,
-                length_short_break = 10,
-                prefix_active = " ",
-                prefix_break = "BREAK ",
-                prefix_long_break = "LONG BREAK ",
-                prefix_inactive = "",
-                prefix_paused = "",
-                padding = 5,
-                fontsize = 16,
-                foreground = colors[7],
-                background = colors[0]
-                ),
-        widget.Sep(
-                linewidth = 0,
-                padding = 5,
-                foreground = colors[7],
-                background = colors[0]
-                ),
-        widget.TextBox(
-                text = ' ',
-                foreground = colors[6],
-                background = colors[0],
-                padding = -1,
-                fontsize = 20
-                ),
         widget.CurrentLayoutIcon(
                 scale = 0.75,
                 foreground = colors[7],
@@ -381,27 +352,12 @@ def init_widgets_list():
                 background = colors[8],
                 padding = 5
                 ),
-        widget.TextBox(
-                text = '',
-                foreground = colors[8],
-                background = colors[0],
-                padding = 0,
-                fontsize = 20
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
                 ),
-        # widget.Sep(
-        #         linewidth = 0,
-        #         padding = 5,
-        #         foreground = colors[7],
-        #         background = colors[0]
-        #         ),
-        widget.TextBox(
-                text = ' ',
-                foreground = colors[8],
-                background = colors[0],
-                padding = -1,
-                fontsize = 20
-                ),
-
         widget.Net(
                 interface = "wlp3s0",
                 format = '{down}',
@@ -423,87 +379,11 @@ def init_widgets_list():
                 background = colors[8],
                 padding = 5
                 ),
-        widget.TextBox(
-                text = '',
-                foreground = colors[8],
-                background = colors[0],
-                padding = 0,
-                fontsize = 20
-                ),
-        # widget.Sep(
-        #         linewidth = 0,
-        #         padding = 5,
-        #         foreground = colors[7],
-        #         background = colors[0]
-        #         ),
-        widget.TextBox(
-                text = ' ',
-                foreground = colors[4],
-                background = colors[0],
-                padding = -1,
-                fontsize = 20
-                ),
-
-        widget.TextBox(
-                text = "直",
-                fontsize = 16,
+        widget.Sep(
+                linewidth = 0,
                 padding = 5,
-                foreground = colors[8],
-                background = colors[4]
-                ),
-        widget.Wlan(
-                interface = "wlp3s0",
-                format = '{essid}',
-                foreground = colors[4],
-                background = colors[8],
-                padding = 5
-                ),
-        widget.TextBox(
-                text = '',
-                foreground = colors[8],
-                background = colors[0],
-                padding = 0,
-                fontsize = 20
-                ),
-        # widget.Sep(
-        #         linewidth = 0,
-        #         padding = 5,
-        #         foreground = colors[7],
-        #         background = colors[0]
-        #         ),
-        widget.TextBox(
-                text = ' ',
-                foreground = colors[2],
-                background = colors[0],
-                padding = -1,
-                fontsize = 20
-                ),
-
-        widget.Volume(
-                emoji = True,
-                fontsize = 14,
-                foreground = colors[8],
-                background = colors[2],
-                padding = 5
-                ),
-        widget.Volume(
-                foreground = colors[2],
-                background = colors[8],
-                padding = 5
-                ),
-        widget.TextBox(
-                text = '',
-                foreground = colors[8],
-                background = colors[0],
-                padding = 0,
-                fontsize = 20
-                ),
-        widget.TextBox(
-                text = ' ',
-                foreground = colors[3],
-                background = colors[0],
-                padding = -1,
-                fontsize = 20
+                foreground = colors[7],
+                background = colors[0]
                 ),
         widget.Battery(
                 battery = "BAT1",
@@ -517,7 +397,7 @@ def init_widgets_list():
                 notify_below = 0.21,
                 show_short_text = False,
                 update_interval = 5,
-                fontsize = 20,
+                fontsize = 16,
                 format ='{char}',
                 padding = 5,
                 foreground = colors[8],
@@ -531,30 +411,54 @@ def init_widgets_list():
                 foreground = colors[3],
                 background = colors[8]
                 ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
         widget.TextBox(
-                text = '',
+                text = "  ",
+                font = "feather",
+                fontsize = 12,
+                foreground = colors[0],
+                background = colors[2],
+                padding = 0
+                ),
+        widget.Volume(
+                foreground = colors[2],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.TextBox(
+                text = "直",
+                fontsize = 12,
+                padding = 5,
                 foreground = colors[8],
-                background = colors[0],
-                padding = 0,
-                fontsize = 20
+                background = colors[4]
                 ),
-        # widget.Sep(
-        #         linewidth = 0,
-        #         padding = 5,
-        #         foreground = colors[7],
-        #         background = colors[0]
-        #         ),
-        widget.TextBox(
-                text = ' ',
-                foreground = colors[1],
-                background = colors[0],
-                padding = -1,
-                fontsize = 20
+        widget.Wlan(
+                interface = "wlp3s0",
+                format = '{essid}',
+                foreground = colors[4],
+                background = colors[8],
+                padding = 5
                 ),
-
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
         widget.TextBox(
                 text = "",
-                fontsize = 20,
+                fontsize = 16,
                 padding = 5,
                 foreground = colors[8],
                 background = colors[1]

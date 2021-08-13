@@ -21,3 +21,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# Add directory to the $PATH variable
+echo "PATH=$PATH:~/.config/rofi/bin" >> ~/.profile
