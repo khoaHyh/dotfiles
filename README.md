@@ -1,4 +1,4 @@
-![demo](./basmati/manjaro-rice-6.png)
+![demo](./basmati/manjaro-rice-7.png)
 
 ### Built With
 
@@ -8,12 +8,13 @@
 * terminal: [alacritty](https://github.com/alacritty/alacritty)
 * terminal multiplexer: [tmux](https://github.com/tmux/tmux)
 * editor: [vim](https://www.vim.org/)
-	* [miramare](https://github.com/franbach/miramare)
+	* [everforest](https://github.com/sainnhe/everforest)
 * app-launcher: [rofi](https://github.com/davatorium/rofi)
 	* [custom rofi addons](https://github.com/adi1090x/rofi)
 * file-manager: [thunar](https://wiki.archlinux.org/index.php/thunar)
-* terminal font: Ubuntu Mono
+* terminal font: FiraCode
 * firefox: [SimplerentFox](https://github.com/MiguelRAvila/SimplerentFox)
 * spotify-theme: [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish)
 * notifications: [dunst](https://github.com/dunst-project/dunst)
 * music player: [cmus](https://github.com/cmus/cmus)
+* screenshot: flameshot
