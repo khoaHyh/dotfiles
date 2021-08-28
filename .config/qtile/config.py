@@ -42,7 +42,7 @@ terminal = "alacritty"
 
 keys = [
     Key([mod, "shift"], "l",
-        lazy.spawn("i3lock -i ~/Wallpapers/groot-i-am-root-qhd-1920x1080.png"),
+        lazy.spawn("i3lock -t -i ~/Wallpapers/groot-i-am-root-qhd-1920x1080.png"),
         desc='launch i3lock and lock the screen'
         ),
     Key([mod, "shift"], "p",
