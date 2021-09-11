@@ -4,6 +4,7 @@
 -- vim.g.material_style = 'deep ocean'
 -- vim.g.material_italic_comments = true
 
+
 -- gruvbox material settings
 vim.g.gruvbox_material_background = 'hard'
 
@@ -97,5 +98,17 @@ lvim.plugins = {
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
+  },
+  { "vimwiki/vimwiki", 
+    config = function ()
+      vim.g.vimwiki_list = {
+        {
+          path = '~/Documents/notes',
+          syntax = 'markdown',
+          index = 'index',
+          ext = '.md',
+        }
+      }
+    end
   },
 }
