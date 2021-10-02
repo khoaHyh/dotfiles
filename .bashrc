@@ -5,6 +5,9 @@
 # set colors for directories when using ls
 alias ls='ls --color=auto'
 
+# fix discord becoming unresponsive during long calls
+alias discord='discord --no-sandbox'
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

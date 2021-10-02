@@ -37,13 +37,12 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-
-## Increase brightness of intel backlight 
+## Dunst notif: increase brightness of intel backlight 
 #"xbacklight -inc 5"
 "~/.config/dunst/scripts/brightnessControl.sh up"
 	XF86MonBrightnessUp
 
-## Decrease brightness of intel backlight	
+## Dunst notif: decrease brightness of intel backlight	
 #"xbacklight -dec 5"
 "~/.config/dunst/scripts/brightnessControl.sh down"
 	XF86MonBrightnessDown
