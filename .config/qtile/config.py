@@ -33,10 +33,6 @@ from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen 
 # from libqtile.lazy import lazy
 from libqtile.command import lazy
-from libqtile.utils import guess_terminal
-
-mod = "mod4"
-terminal = guess_terminal()
 
 mod = "mod4"
 terminal = "alacritty"
@@ -156,33 +152,33 @@ keys = [
         ),
 ]
 
-groups = [Group(i) for i in "123456789"]
+# groups = [Group(i) for i in "123456789"]
 
-for i in groups:
-    keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
-            desc="Switch to group {}".format(i.name)),
+# for i in groups:
+#     keys.extend([
+#         # mod1 + letter of group = switch to group
+#         Key([mod], i.name, lazy.group[i.name].toscreen(),
+#             desc="Switch to group {}".format(i.name)),
 
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
-    ])
+#         # mod1 + shift + letter of group = switch to & move focused window to group
+#         Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+#             desc="Switch to & move focused window to group {}".format(i.name)),
+#         # Or, use below if you prefer not to switch to that group.
+#         # # mod1 + shift + letter of group = move focused window to group
+#         # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+#         #     desc="move focused window to group {}".format(i.name)),
+#     ])
 
 ## MULTIPLE DISPLAY ##
-# pinned_groups = ['12345', '67890']
-# all_groups = ''.join(pinned_groups)
-# 
-# groups = [Group(i) for i in all_groups]
-# 
-# for j, names in enumerate(pinned_groups):
-#     keys.extend(Key([mod], i, lazy.to_screen(j), lazy.group[i].toscreen()) for i in names)
-# 
-# keys.extend(Key([mod, 'shift'], i, lazy.window.togroup(i)) for i in all_groups)
+pinned_groups = ['12345', '67890']
+all_groups = ''.join(pinned_groups)
+
+groups = [Group(i) for i in all_groups]
+
+for j, names in enumerate(pinned_groups):
+    keys.extend(Key([mod], i, lazy.to_screen(j), lazy.group[i].toscreen()) for i in names)
+
+keys.extend(Key([mod, 'shift'], i, lazy.window.togroup(i)) for i in all_groups)
 ## MULTIPLE DISPLAY END ##
 
 layout_theme = {"border_width": 2,
@@ -242,204 +238,217 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.Sep(
-                        lineWidth = 0,
-                        padding = 6,
-                        foreground = colors[0],
-                        background = colors[0]
-                        ),
-                widget.GroupBox(
-                        fontsize = 12,
-                        margin_y = 5,
-                        margin_x = 0,
-                        padding_y = 3,
-                        padding_x = 5,
-                        borderwidth = 3,
-                        active = colors[7],
-                        inactive = colors[7],
-                        rounded = False,
-                        block_highlight_text_color = colors[0],
-                        highlight_color = colors[7],
-                        highlight_method = "line",
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Prompt(
-                        prompt = prompt,
-                        padding = 10,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 30,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.WindowName(
-                        foreground = colors[7],
-                        background = colors[0],
-                        padding = 0
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 30,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Systray(
-                        background = colors[0],
-                        padding = 5,
-                        icon_size = 18
-                        ),
-                widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.CurrentLayoutIcon(
-                        scale = 0.75,
-                        foreground = colors[7],
-                        background = colors[6]
-                        ),
-                widget.CurrentLayout(
-                        foreground = colors[6],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Net(
-                        interface = "wlp3s0",
-                        format = '{down}',
-                        foreground = colors[5],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.TextBox(
-                        text = "祝",
-                        fontsize = 16,
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[5]
-                        ),
-                widget.Net(
-                        interface = "wlp3s0",
-                        format = '{up}',
-                        foreground = colors[5],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.Battery(
-                        battery = "BAT1",
-                        charge_char = '',
-                        discharge_char = "",
-                        empty_char = "",
-                        full_char = "",
-                        unknown_char = "",
-                        low_foreground = colors[6],
-                        low_percentage = 0.25,
-                        notify_below = 0.21,
-                        show_short_text = False,
-                        update_interval = 5,
-                        fontsize = 16,
-                        format ='{char}',
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[3]
-                        ),
-                widget.Battery(
-                        battery = "BAT1",
-                        update_interval = 5,
-                        format ='{percent:2.0%}',
-                        padding = 5,
-                        foreground = colors[3],
-                        background = colors[8]
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.TextBox(
-                        text = "  ",
-                        font = "feather",
-                        fontsize = 12,
-                        foreground = colors[0],
-                        background = colors[2],
-                        padding = 0
-                        ),
-                widget.Volume(
-                        foreground = colors[2],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.TextBox(
-                        text = "直",
-                        fontsize = 12,
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[4]
-                        ),
-                widget.Wlan(
-                        interface = "wlp3s0",
-                        format = '{essid}',
-                        foreground = colors[4],
-                        background = colors[8],
-                        padding = 5
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[7],
-                        background = colors[0]
-                        ),
-                widget.TextBox(
-                        text = "",
-                        fontsize = 16,
-                        padding = 5,
-                        foreground = colors[8],
-                        background = colors[1]
-                        ),
-                widget.Clock(
-                        foreground = colors[1],
-                        background = colors[8],
-                        padding = 5,
-                        format = "%A, %B %d - %H:%M"
-                        ),
-                widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[0],
-                        background = colors[8]
-                        ),
-            ],
-            20,
-        ),
-    ),
-]
+def init_widgets_list():
+    widgets_list = [
+        widget.Sep(
+                lineWidth = 0,
+                padding = 6,
+                foreground = colors[0],
+                background = colors[0]
+                ),
+        widget.GroupBox(
+                fontsize = 12,
+                margin_y = 5,
+                margin_x = 0,
+                padding_y = 3,
+                padding_x = 5,
+                borderwidth = 3,
+                active = colors[7],
+                inactive = colors[7],
+                rounded = False,
+                block_highlight_text_color = colors[0],
+                highlight_color = colors[7],
+                highlight_method = "line",
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Prompt(
+                prompt = prompt,
+                padding = 10,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 30,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.WindowName(
+                foreground = colors[7],
+                background = colors[0],
+                padding = 0
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 30,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Systray(
+                background = colors[0],
+                padding = 5,
+                icon_size = 18
+                ),
+        widget.Sep(
+                linewidth = 1,
+                padding = 10,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.CurrentLayoutIcon(
+                scale = 0.75,
+                foreground = colors[7],
+                background = colors[6]
+                ),
+        widget.CurrentLayout(
+                foreground = colors[6],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Net(
+                interface = "wlp3s0",
+                format = '{down}',
+                foreground = colors[5],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.TextBox(
+                text = "祝",
+                fontsize = 16,
+                padding = 5,
+                foreground = colors[8],
+                background = colors[5]
+                ),
+        widget.Net(
+                interface = "wlp3s0",
+                format = '{up}',
+                foreground = colors[5],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.Battery(
+                battery = "BAT1",
+                charge_char = '',
+                discharge_char = "",
+                empty_char = "",
+                full_char = "",
+                unknown_char = "",
+                low_foreground = colors[6],
+                low_percentage = 0.25,
+                notify_below = 0.21,
+                show_short_text = False,
+                update_interval = 5,
+                fontsize = 16,
+                format ='{char}',
+                padding = 5,
+                foreground = colors[8],
+                background = colors[3]
+                ),
+        widget.Battery(
+                battery = "BAT1",
+                update_interval = 5,
+                format ='{percent:2.0%}',
+                padding = 5,
+                foreground = colors[3],
+                background = colors[8]
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.TextBox(
+                text = "  ",
+                font = "feather",
+                fontsize = 12,
+                foreground = colors[0],
+                background = colors[2],
+                padding = 0
+                ),
+        widget.Volume(
+                foreground = colors[2],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.TextBox(
+                text = "直",
+                fontsize = 12,
+                padding = 5,
+                foreground = colors[8],
+                background = colors[4]
+                ),
+        widget.Wlan(
+                interface = "wlp3s0",
+                format = '{essid}',
+                foreground = colors[4],
+                background = colors[8],
+                padding = 5
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[7],
+                background = colors[0]
+                ),
+        widget.TextBox(
+                text = "",
+                fontsize = 16,
+                padding = 5,
+                foreground = colors[8],
+                background = colors[1]
+                ),
+        widget.Clock(
+                foreground = colors[1],
+                background = colors[8],
+                padding = 5,
+                format = "%A, %B %d - %H:%M"
+                ),
+        widget.Sep(
+                linewidth = 0,
+                padding = 5,
+                foreground = colors[0],
+                background = colors[8]
+                ),
+        ]
+    return widgets_list
+
+def init_widgets_screen1():
+    widgets_screen1 = init_widgets_list()
+    return widgets_screen1
+
+def init_widgets_screen2():
+    widgets_screen2 = init_widgets_list()
+    return widgets_screen2    
+
+def init_screens():
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20))]
+
+if __name__ in ["config", "__main__"]:
+    screens = init_screens()
+    widgets_list = init_widgets_list()
+    widgets_screen1 = init_widgets_screen1()
+    widgets_screen2 = init_widgets_screen2()
 
 # Drag floating layouts.
 mouse = [
@@ -464,7 +473,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
-])
+], **layout_theme)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
