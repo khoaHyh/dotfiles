@@ -27,12 +27,12 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+  t = { "<cmd>TroubleToggle<cr>", "trouble" },
+  w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
+  d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
+  q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+  l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+  r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 }
 
 -- TODO: User Config for predefined plugins
@@ -110,5 +110,9 @@ lvim.plugins = {
         }
       }
     end
+  },
+  {
+    "folke/trouble.nvim",
+      cmd = "TroubleToggle",
   },
 }
