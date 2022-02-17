@@ -119,7 +119,7 @@ colors:
     white:   '#928374'
   # indexed_colors: []
   
-window.opacity: 0.9
+window.opacity: 1.0
 
 key_bindings:
     # (Windows, Linux, and BSD only)
