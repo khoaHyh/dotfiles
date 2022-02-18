@@ -1,3 +1,14 @@
-require('lua/user/keymaps')
-require('lua/user/packages')
-require('lua/user/options')
+require'user.keymaps'
+require'user.packages'
+require'user.options'
+require'user.vimwiki'
+require'user.dashboard'
+require'user.cmp'
+require'user.lsp'
+require'user.telescope'
+require'user.treesitter'
+require'user.autopairs'
+require'user.comment'
+require'user.gitsigns'
+require'user.nvim-tree'
+require'user.bufferline'
