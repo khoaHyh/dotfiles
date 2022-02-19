@@ -35,6 +35,9 @@ require("packer").startup(function(use)
 	use("akinsho/toggleterm.nvim")
 	use("folke/which-key.nvim")
 	use("nvim-lualine/lualine.nvim")
+	use("ahmedkhalf/project.nvim")
+	use("lewis6991/impatient.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- colorscheme
 	use("sainnhe/gruvbox-material")
