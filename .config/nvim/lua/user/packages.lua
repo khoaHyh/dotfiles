@@ -31,6 +31,10 @@ require("packer").startup(function(use)
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("glepnir/dashboard-nvim")
 	use("marko-cerovac/material.nvim")
+	use("vimwiki/vimwiki")
+	use("akinsho/toggleterm.nvim")
+	use("folke/which-key.nvim")
+	use("nvim-lualine/lualine.nvim")
 
 	-- colorscheme
 	use("sainnhe/gruvbox-material")
@@ -48,10 +52,8 @@ require("packer").startup(function(use)
 	use("nvim-treesitter/playground")
 	use("windwp/nvim-autopairs")
 	use("p00f/nvim-ts-rainbow")
-	use("vimwiki/vimwiki")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("folke/which-key.nvim")
 
 	-- comments
 	use("numToStr/Comment.nvim")
