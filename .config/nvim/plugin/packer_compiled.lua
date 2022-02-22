@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/ka9/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["DAPInstall.nvim"] = {
+    loaded = true,
+    path = "/home/ka9/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
+    url = "https://github.com/Pocco81/DAPInstall.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/ka9/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -169,6 +174,11 @@ _G.packer_plugins = {
     path = "/home/ka9/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/ka9/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/home/ka9/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -248,6 +258,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ka9/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/ka9/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   vimwiki = {
     loaded = true,

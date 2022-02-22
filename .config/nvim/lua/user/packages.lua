@@ -38,6 +38,7 @@ require("packer").startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("folke/which-key.nvim")
+	use("folke/trouble.nvim")
 
 	-- colorscheme
 	use("sainnhe/gruvbox-material")
@@ -76,4 +77,8 @@ require("packer").startup(function(use)
 
 	-- git
 	use("lewis6991/gitsigns.nvim")
+
+	-- debugging
+	use("mfussenegger/nvim-dap")
+	use("Pocco81/DAPInstall.nvim")
 end)

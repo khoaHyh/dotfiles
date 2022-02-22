@@ -1,10 +1,9 @@
 -- keybindings --
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 local map = vim.api.nvim_set_keymap
 
--- map Space as leader key
-map("", "<Space>", "<Nop>", opts)
+-- map Space as leader key map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -45,19 +44,27 @@ map("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 --Telescope
 -- map('n', '<leader>ff', "<Cmd>Telescope find_files<CR>", opts)
-map(
-	"n",
-	"<leader>f",
-	"<Cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>",
-	opts
-)
-map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", opts)
+-- map(
+-- 	"n",
+-- 	"<leader>f",
+-- 	"<Cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>",
+-- 	opts
+-- )
+-- map("n", "<leader>fg", "<Cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", opts)
 
 -- nvimtree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- trouble
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
+map("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+map("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
+map("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+map("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+map("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
