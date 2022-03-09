@@ -1,5 +1,5 @@
 # Set wallpaper
-hsetroot -cover ~/Wallpapers/dark-japanese-town.png
+hsetroot -cover ~/Wallpapers/jellyfish_astronaut.jpg
 
 # Set/restore dwall wallpaper after login/reboot
 #dwall -s aurora &
