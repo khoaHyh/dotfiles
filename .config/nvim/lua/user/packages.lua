@@ -26,13 +26,19 @@ require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
 	use("burntsushi/ripgrep")
-	use("akinsho/bufferline.nvim")
+	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "v2.*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("glepnir/dashboard-nvim")
 	use("marko-cerovac/material.nvim")
 	use("vimwiki/vimwiki")
-	use("akinsho/toggleterm.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
