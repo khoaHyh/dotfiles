@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = { "typescript", "javascript", "go", "json", "python" },
+	ensure_installed = { "go", "python", "lua", "json", "typescript", "javascript" },
 	sync_install = false,
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	autopairs = {
