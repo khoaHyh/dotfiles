@@ -42,3 +42,24 @@ vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_enable_bold = "1"
 
 vim.g.dashboard_default_executive = "telescope"
+
+vim.g.nvim_tree_icons = {
+	default = "",
+	symlink = "",
+	git = {
+		unstaged = "",
+		staged = "S",
+		unmerged = "",
+		renamed = "➜",
+		deleted = "",
+		untracked = "U",
+		ignored = "◌",
+	},
+	folder = {
+		default = "",
+		open = "",
+		empty = "",
+		empty_open = "",
+		symlink = "",
+	},
+}
