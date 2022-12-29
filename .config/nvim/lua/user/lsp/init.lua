@@ -1,3 +1,4 @@
+require("user.lsp.null-ls")
 require("mason").setup({
     ui = {
         icons = {
