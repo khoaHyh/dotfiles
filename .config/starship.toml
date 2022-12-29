@@ -21,8 +21,8 @@ symbol = " "
 [directory]
 read_only = " "
 
-[docker]
-symbol = " "
+[docker_context]
+format = "via [ $context](blue bold)"
 
 [elixir]
 symbol = " "
