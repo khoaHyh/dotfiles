@@ -2,7 +2,7 @@ require("user.keymaps")
 require("user.packages")
 require("user.options")
 require("user.vimwiki")
-require("user.dashboard")
+require("user.indentline")
 require("user.cmp")
 require("user.lsp")
 require("user.telescope")
@@ -15,8 +15,8 @@ require("user.lualine")
 require("user.toggleterm")
 require("user.project")
 require("user.impatient")
-require("user.indentline")
 require("user.whichkey")
+require("user.dashboard")
 
 require("nvim-tree").setup({
 	disable_netrw = true,
@@ -30,10 +30,6 @@ require("nvim-tree").setup({
 	open_on_tab = false,
 	hijack_cursor = false,
 	update_cwd = true,
-	update_to_buf_dir = {
-		enable = true,
-		auto_open = true,
-	},
 	diagnostics = {
 		enable = true,
 		icons = {
@@ -55,10 +51,8 @@ require("nvim-tree").setup({
 	},
 	view = {
 		width = 30,
-		height = 30,
 		hide_root_folder = false,
 		side = "left",
-		auto_resize = true,
 		number = false,
 		relativenumber = false,
 	},

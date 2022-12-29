@@ -1,8 +1,29 @@
-local status_ok, _ = pcall(require, 'lspconfig')
-if not status_ok then
-  return
-end
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+require("mason-lspconfig").setup()
 
-require'user.lsp.lsp-installer'
-require'user.lsp.handlers'.setup()
-require'user.lsp.null-ls'
+Lspconfig = require "lspconfig"
+Util = require "lspconfig/util"
+
+-- After setting up mason-lspconfig you may set up servers via lspconfig
+Lspconfig.sumneko_lua.setup {}
+Lspconfig.gopls.setup {
+    cmd = {"gopls", "serve"},
+    filetypes = {"go", "gomod"},
+    root_dir = Util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+      gopls = {
+        analyses = {
+          unusedparams = true,
+        },
+        staticcheck = true,
+      },
+    },
+  }

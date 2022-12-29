@@ -42,18 +42,22 @@ require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
+	use({"lukas-reineke/indent-blankline.nvim", 
+        config = function()
+            require("indent_blankline").setup { filetype_exclude = { "dashboard" }
+            }
+        end
+    })
 	use("folke/which-key.nvim")
 	use("folke/trouble.nvim")
 
 	-- colorscheme
 	use("sainnhe/gruvbox-material")
 
-	-- LSP
-	use("neovim/nvim-lspconfig")
-	use("williamboman/nvim-lsp-installer")
-	use("tamago324/nlsp-settings.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
+    -- LSP
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
+    use("neovim/nvim-lspconfig")
 
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -83,8 +87,4 @@ require("packer").startup(function(use)
 
 	-- git
 	use("lewis6991/gitsigns.nvim")
-
-	-- debugging
-	use("mfussenegger/nvim-dap")
-	use("Pocco81/DAPInstall.nvim")
 end)
