@@ -16,6 +16,8 @@ window:
     y: 20
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
+  # Remove title bar
+  decorations: None
   title: Alacritty
   # Window class (Linux/BSD only):
   class:
@@ -32,19 +34,19 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: FuraCode Nerd Font
+    family: Fira Code Nerd Font
     style: Medium
 
   bold:
-    family: FuraCode Nerd Font
+    family: Fira Code Nerd Font
     style: Bold
 
   italic:
-    family: FuraCode Nerd Font
+    family: Fira Code Nerd Font
     style: Italic
 
   bold_italic:
-    family: FuraCode Nerd Font
+    family: Fira Code Nerd Font
     style: Bold Italic
 
   size: 10
@@ -59,65 +61,35 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Gruvbox dark)
+# Colors (moonlight_ii_vscode)
 colors:
   primary:
-    # hard contrast background - '#1d2021'
-    background:        &gruvbox_dark_bg '#282828'
-    # soft contrast background - '#32302f'
-    foreground:        '#fbf1c7'
-    bright_foreground: '#f9f5d7'
-    dim_foreground:    '#f2e5bc'
+    background: '0x1e2030'
+    foreground: '0x7f85a3'
+
   cursor:
-    text:   CellBackground
-    cursor: CellForeground
-  vi_mode_cursor:
-    text:   CellBackground
-    cursor: CellForeground
-  # search:
-  #   matches:
-  #     foreground: '#000000'
-  #     background: '#ffffff'
-  #   focused_match:
-  #    foreground: CellBackground
-  #    background: CellForeground
-  #   bar:
-  #     background: ''
-  #     foreground: ''
-  # line_indicator:
-  #   foreground: None
-  #   background: None     
-  selection:
-    text:       CellBackground
-    background: CellForeground
-  bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
+    text:   '0x7f85a3'
+    cursor: '0x808080'
+      
   normal:
-    black:   *gruvbox_dark_bg
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
-  dim:
-    black:   '#32302f'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#928374'
-  # indexed_colors: []
+    black:   '0x444a73'
+    red:     '0xff5370'
+    green:   '0x4fd6be'
+    yellow:  '0xffc777'
+    blue:    '0x3e68d7'
+    magenta: '0xfc7b7b'
+    cyan:    '0x86e1fc'
+    white:   '0xd0d0d0'
+
+  bright:
+    black:   '0x828bb8'
+    red:     '0xff98a4'
+    green:   '0xc3e88d'
+    yellow:  '0xffc777'
+    blue:    '0x82aaff'
+    magenta: '0xff966c'
+    cyan:    '0xb4f9f8'
+    white:   '0x5f8787'
   
 window.opacity: 1.0
 
