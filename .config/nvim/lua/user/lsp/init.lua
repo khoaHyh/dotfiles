@@ -14,17 +14,16 @@ Lspconfig = require "lspconfig"
 Util = require "lspconfig/util"
 
 -- After setting up mason-lspconfig you may set up servers via lspconfig
-Lspconfig.sumneko_lua.setup {}
 Lspconfig.gopls.setup {
-    cmd = {"gopls", "serve"},
-    filetypes = {"go", "gomod"},
+    cmd = { "gopls", "serve" },
+    filetypes = { "go", "gomod" },
     root_dir = Util.root_pattern("go.work", "go.mod", ".git"),
     settings = {
-      gopls = {
-        analyses = {
-          unusedparams = true,
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
         },
-        staticcheck = true,
-      },
     },
-  }
+}

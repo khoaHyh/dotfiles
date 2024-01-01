@@ -2,7 +2,6 @@ require("user.keymaps")
 require("user.packages")
 require("user.options")
 require("user.vimwiki")
-require("user.indentline")
 require("user.cmp")
 require("user.lsp")
 require("user.telescope")
@@ -21,12 +20,6 @@ require("user.dashboard")
 require("nvim-tree").setup({
     disable_netrw = true,
     hijack_netrw = true,
-    open_on_setup = false,
-    ignore_ft_on_setup = {
-        "startify",
-        "dashboard",
-        "alpha",
-    },
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = true,
@@ -51,7 +44,6 @@ require("nvim-tree").setup({
     },
     view = {
         width = 30,
-        hide_root_folder = false,
         side = "left",
         number = false,
         relativenumber = false,
