@@ -26,7 +26,7 @@ require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
 	use("burntsushi/ripgrep")
-	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
+	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "v2.*",
@@ -42,10 +42,18 @@ require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
-	use({"lukas-reineke/indent-blankline.nvim", 
+	use({"lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("indent_blankline").setup { filetype_exclude = { "dashboard" }
-            }
+            require('ibl').setup({
+                exclude = {
+                    buftypes = { 'terminal' },
+                    filetypes = { 'dashboard', 'NvimTree', 'packer', 'lsp-installer' }
+                },
+                scope = {
+                    enabled = true,
+                    show_end = true
+                }
+            })
         end
     })
 	use("folke/which-key.nvim")

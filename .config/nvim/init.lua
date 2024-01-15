@@ -47,5 +47,5 @@ require("nvim-tree").setup({
         side = "left",
         number = false,
         relativenumber = false,
-    },
+    }
 })

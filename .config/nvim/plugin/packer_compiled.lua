@@ -135,6 +135,7 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["indent-blankline.nvim"] = {
+    config = { "\27LJ\2\2Ë\1\0\0\4\0\f\0\0156\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\b\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2=\2\t\0015\2\n\0=\2\v\1B\0\2\1K\0\1\0\nscope\1\0\2\fenabled\2\rshow_end\2\fexclude\1\0\0\14filetypes\1\5\0\0\14dashboard\rNvimTree\vpacker\18lsp-installer\rbuftypes\1\0\0\1\2\0\0\rterminal\nsetup\bibl\frequire\0" },
     loaded = true,
     path = "/home/ka9/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
@@ -163,6 +164,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ka9/.local/share/nvim/site/pack/packer/start/material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/ka9/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -272,6 +278,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\0028\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\2Ë\1\0\0\4\0\f\0\0156\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\b\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\2=\2\t\0015\2\n\0=\2\v\1B\0\2\1K\0\1\0\nscope\1\0\2\fenabled\2\rshow_end\2\fexclude\1\0\0\14filetypes\1\5\0\0\14dashboard\rNvimTree\vpacker\18lsp-installer\rbuftypes\1\0\0\1\2\0\0\rterminal\nsetup\bibl\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
