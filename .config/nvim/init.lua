@@ -35,6 +35,7 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 		
+-- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -42,7 +43,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    "--branch=stable",
     lazypath,
   })
 end
@@ -50,26 +51,9 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
-require("lazy").setup({
-  "folke/which-key.nvim",
-  "folke/neodev.nvim",
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
+require("lazy").setup("plugins")
 
-    config = function () 
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "html", "typescript", "tsx", "go" },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },  
-        })
-    end
-  },
-"sainnhe/gruvbox-material", 
-})
-
--- set colorscheme
+-- set colorscheme after plugins are loaded
 vim.cmd([[colorscheme gruvbox-material]])
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_enable_bold = "1"
