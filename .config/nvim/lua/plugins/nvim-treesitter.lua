@@ -1,5 +1,4 @@
 return {
-      "folke/which-key.nvim", -- TODO: need to set this up because I forget keybindings
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", -- Highlighting
 
     config = function () 
@@ -12,11 +11,5 @@ return {
           indent = { enable = true },  
         })
     end
-  },
-    "sainnhe/gruvbox-material", 
-    -- LSP
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    "jose-elias-alvarez/null-ls.nvim"
+  }
 }

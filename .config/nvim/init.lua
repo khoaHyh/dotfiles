@@ -6,8 +6,7 @@ local options = {
 	shiftwidth = 4,
 	softtabstop = 4,
 	tabstop = 4,
-	autoindent = true,
-	number = true,
+	autoindent = true, number = true,
 	clipboard = "unnamedplus",
 	conceallevel = 0,
 	fileencoding = "utf-8",
@@ -35,23 +34,8 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 		
--- bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
-
-require("lazy").setup("plugins")
+require "config.keymaps" -- map b4 loading packages so we can use <Leader>
+require "lazy-config"
 
 -- set colorscheme after plugins are loaded
 vim.cmd([[colorscheme gruvbox-material]])
