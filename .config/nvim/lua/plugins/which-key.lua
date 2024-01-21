@@ -76,10 +76,11 @@ local opts = {
 
 local mappings = {
 	["e"] = { ":NvimTreeToggle<CR>", "NvimTreeToggle" },
-	--["f"] = {
-		--"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		--"find files",
-    --["F"] = { "<cmd>Telescope live_grep<cr>", "live_grep" },
+	["f"] = {
+		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Find files"
+    },
+    ["F"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
 }
 
 
