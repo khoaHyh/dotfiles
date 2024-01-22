@@ -6,7 +6,7 @@
 * terminal multiplexer: tmux
 * dev editor: vs-code
 * command-line editor: neovim
-	* [gruvbox-material](https://github.com/sainnhe/gruvbox-material)
+	* [config](https://github.com/khoaHyh/dotfiles/tree/master/.config/nvim)
 
 ### Deprecated
 
