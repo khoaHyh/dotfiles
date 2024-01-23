@@ -42,3 +42,11 @@ vim.cmd([[colorscheme gruvbox-material]])
 vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_enable_bold = "1"
 
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+augroup("__formatter__", { clear = true })
+autocmd("BufWritePost", {
+	group = "__formatter__",
+	command = ":FormatWrite",
+})
+
