@@ -6,7 +6,8 @@ local options = {
 	shiftwidth = 4,
 	softtabstop = 4,
 	tabstop = 4,
-	autoindent = true, number = true,
+	autoindent = true,
+	number = true,
 	clipboard = "unnamedplus",
 	conceallevel = 0,
 	fileencoding = "utf-8",
@@ -33,14 +34,17 @@ local options = {
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
-		
-require "config.keymaps" -- map b4 loading packages so we can use <Leader>
-require "lazy-config"
+
+require("config.keymaps") -- map b4 loading packages so we can use <Leader>
+require("lazy-config")
 
 -- set colorscheme after plugins are loaded
-vim.cmd([[colorscheme gruvbox-material]])
-vim.g.gruvbox_material_background = "hard"
-vim.g.gruvbox_material_enable_bold = "1"
+-- vim.cmd([[colorscheme gruvbox-material]])
+-- vim.g.gruvbox_material_background = "hard"
+-- vim.g.gruvbox_material_enable_bold = "1"
+
+vim.g.everforest_background = "hard"
+vim.cmd([[colorscheme everforest ]])
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
@@ -49,4 +53,3 @@ autocmd("BufWritePost", {
 	group = "__formatter__",
 	command = ":FormatWrite",
 })
-
