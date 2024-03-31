@@ -5,6 +5,8 @@ return {
 	"nvim-tree/nvim-web-devicons",
 	"nvim-telescope/telescope-media-files.nvim",
 	"williamboman/mason-lspconfig.nvim",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
 	"JoosepAlviste/nvim-ts-context-commentstring", -- Comments
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",

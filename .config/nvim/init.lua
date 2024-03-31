@@ -46,10 +46,3 @@ require("lazy-config")
 vim.g.everforest_background = "hard"
 vim.cmd([[colorscheme everforest ]])
 
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-augroup("__formatter__", { clear = true })
-autocmd("BufWritePost", {
-	group = "__formatter__",
-	command = ":FormatWrite",
-})
