@@ -7,14 +7,15 @@ return {
 		end
 
 		conform.setup({
+
 			formatters_by_ft = {
-				javascript = { { "prettierd", "prettier" } },
 				typescript = { { "prettierd", "prettier" } },
+				javascript = { { "prettierd", "prettier" } },
+				typescriptreact = { { "prettierd", "prettier" } },
+				javascriptreact = { { "prettierd", "prettier" } },
 				markdown = { { "prettierd", "prettier" } },
 				json = { { "prettierd", "prettier" } },
 				css = { { "prettierd", "prettier" } },
-				tsx = { { "prettierd", "prettier" } },
-				jsx = { { "prettierd", "prettier" } },
 				yaml = { { "prettierd", "prettier" } },
 				go = { "gofumpt" },
 				c = { "clang-format" },
@@ -22,6 +23,17 @@ return {
 				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
 				-- Use a sub-list to run only the first available formatter
+			},
+			ft_parsers = {
+				javascript = "babel",
+				javascriptreact = "babel",
+				typescript = "typescript",
+				typescriptreact = "typescript",
+				css = "css",
+				html = "html",
+				json = "json",
+				yaml = "yaml",
+				markdown = "markdown",
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()
