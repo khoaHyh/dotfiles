@@ -3,9 +3,9 @@ local options = {
 	termguicolors = true,
 	cmdheight = 2,
 	expandtab = true,
-	shiftwidth = 4,
-	softtabstop = 4,
-	tabstop = 4,
+	shiftwidth = 2,
+	softtabstop = 2,
+	tabstop = 2,
 	autoindent = true,
 	number = true,
 	clipboard = "unnamedplus",
@@ -45,4 +45,3 @@ require("lazy-config")
 
 vim.g.everforest_background = "hard"
 vim.cmd([[colorscheme everforest ]])
-
