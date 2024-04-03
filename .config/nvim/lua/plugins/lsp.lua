@@ -17,7 +17,7 @@ return {
 		local lspconfig = require("lspconfig")
 		local mason = require("mason")
 		require("mason-lspconfig").setup({
-			ensure_installed = { "clangd", "gopls", "tsserver", "eslint", "lua_ls", "marksman" },
+			ensure_installed = { "clangd", "gopls", "tsserver", "eslint", "lua_ls", "marksman", "pyright" },
 			handlers = { default_setup },
 		})
 
@@ -29,6 +29,7 @@ return {
 		lspconfig.eslint.setup({})
 		lspconfig.lua_ls.setup({})
 		lspconfig.marksman.setup({})
+		lspconfig.pyright.setup({})
 
 		local cmp = require("cmp")
 		cmp.setup({
