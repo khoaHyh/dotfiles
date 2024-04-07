@@ -7,7 +7,7 @@ local map = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- window (aka panes) navigation 
+-- window (aka panes) navigation
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-k>", "<C-w>k", opts)

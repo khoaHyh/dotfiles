@@ -15,7 +15,7 @@ return {
 			whitespace = {
 				remove_blankline_trail = false,
 			},
-			scope = { highlight = highlight, enabled = true },
+			scope = { enabled = true },
 		})
 	end,
 }

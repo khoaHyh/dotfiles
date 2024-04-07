@@ -1,4 +1,3 @@
-
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -78,21 +77,21 @@ local mappings = {
 	["e"] = { ":NvimTreeToggle<CR>", "NvimTreeToggle" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Find files"
-    },
-    ["F"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
+		"Find files",
+	},
+	["F"] = { "<cmd>Telescope live_grep<cr>", "Live grep" },
+	["t"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Diagnostics" },
 }
 
-
 return {
-    "folke/which-key.nvim",
-    config = function () 
-        local status_ok, which_key = pcall(require, "which-key")
-        if not status_ok then
-            return
-        end
+	"folke/which-key.nvim",
+	config = function()
+		local status_ok, which_key = pcall(require, "which-key")
+		if not status_ok then
+			return
+		end
 
-        which_key.setup(setup)
-        which_key.register(mappings, opts)
-    end
+		which_key.setup(setup)
+		which_key.register(mappings, opts)
+	end,
 }
