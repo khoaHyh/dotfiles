@@ -21,8 +21,7 @@ disabled = true
 #format = "via [ $context](blue bold)"
 
 [git_branch]
-disabled = true
-#symbol = " "
+symbol = " "
 
 [golang]
 disabled = true
