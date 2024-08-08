@@ -10,74 +10,52 @@ disabled = true
 success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 [aws]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [directory]
 read_only = " "
 
 [docker_context]
-format = "via [ $context](blue bold)"
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+disabled = true
+#format = "via [ $context](blue bold)"
 
 [git_branch]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [golang]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[hg_branch]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [java]
-symbol = " "
+disabled = true
+#symbol = " "
 
-[julia]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[nim]
-symbol = " "
+[lua]
+disabled = true
 
 [nix_shell]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [nodejs]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [package]
-symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [python]
-symbol = " "
-
-[ruby]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [rust]
-symbol = " "
+disabled = true
+#symbol = " "
 
 [swift]
-symbol = "ﯣ "
+disabled = true
+#symbol = "ﯣ "
 
