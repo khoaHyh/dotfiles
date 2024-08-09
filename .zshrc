@@ -82,12 +82,14 @@ export VISUAL='nvim'
 
 export NVM_DIR="$HOME/.nvm"
 
+# nbdev alias to clean Jupyter notebooks before committing
+alias prep='nbdev_export && nbdev_clean && nbdev_trust'
+
 # zsh-autosuggestions keys
 bindkey '^ ' autosuggest-accept
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH=$PATH:/usr/local/go/bin
-export PATH="/usr/local/bin/docker-compose:$PATH"
+export PATH="$HOME/.local/bin:/usr/local/go/bin:/usr/local/bin/docker-compose:$PATH"
 
 eval "$(starship init zsh)"
