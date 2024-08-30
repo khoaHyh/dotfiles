@@ -76,6 +76,15 @@ ZSH_DISABLE_COMPFIX="true"
 
 source $ZSH/oh-my-zsh.sh
 
+# Git aliases
+alias ga='git add'
+alias gaa='git add .'
+alias gcm='git commit -m'
+alias gp='git push'
+alias gpull='git pull'
+alias gd='git diff'
+alias glog='git log --oneline --decorate --graph'
+
 # User configuration
 export EDITOR='nvim'
 export VISUAL='nvim'
