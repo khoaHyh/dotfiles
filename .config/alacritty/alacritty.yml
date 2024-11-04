@@ -33,19 +33,19 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: FiraCode Nerd Font Mono
+    family: FiraCodeNerdFontMono
     style: Medium
 
   bold:
-    family: FiraCode Nerd Font Mono
+    family: FiraCodeNerdFontMono
     style: Bold
 
   italic:
-    family: FiraCode Nerd Font Mono
+    family: FiraCodeNerdFontMono
     style: Italic
 
   bold_italic:
-    family: FiraCode Nerd Font Mono
+    family: FiraCodeNerdFontMono
     style: Bold Italic
 
   size: 10
