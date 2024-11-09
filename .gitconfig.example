@@ -3,6 +3,16 @@
 
 [core]
   pager = delta
+  editor = nvim
+
+[alias]
+  staash = stash --include-untracked
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  unstage = reset HEAD --
+  last = log -1 HEAD
 
 [interactive]
   diffFilter = delta --color-only
