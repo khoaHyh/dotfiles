@@ -1,3 +1,6 @@
+#[include]
+#  path = ~/dev/dotfiles/themes.gitconfig
+
 [core]
   pager = delta
 
@@ -9,6 +12,8 @@
   dark = true
   side-by-side = true
   true-color = always
+  # features = gruvmax-fang
+  # features = mellow-barbet
 
 [merge]
   conflictStyle = zdiff3
