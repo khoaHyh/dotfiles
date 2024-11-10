@@ -99,6 +99,8 @@ bindkey '^ ' autosuggest-accept
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+alias cat='bat'
+
 export PATH="$HOME/.local/bin:/usr/local/go/bin:/usr/local/bin/docker-compose:$PATH"
 
 eval "$(starship init zsh)"
